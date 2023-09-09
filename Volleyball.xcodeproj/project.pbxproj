@@ -1,0 +1,607 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F80D39682AAC7B1400206DB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80D39672AAC7B1400206DB7 /* AppDelegate.swift */; };
+		F80D396A2AAC7B1400206DB7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80D39692AAC7B1400206DB7 /* SceneDelegate.swift */; };
+		F80D396C2AAC7B1400206DB7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80D396B2AAC7B1400206DB7 /* ViewController.swift */; };
+		F80D396F2AAC7B1400206DB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F80D396D2AAC7B1400206DB7 /* Main.storyboard */; };
+		F80D39712AAC7B1600206DB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F80D39702AAC7B1600206DB7 /* Assets.xcassets */; };
+		F80D39742AAC7B1600206DB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F80D39722AAC7B1600206DB7 /* LaunchScreen.storyboard */; };
+		F80D397F2AAC7B1600206DB7 /* VolleyballTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80D397E2AAC7B1600206DB7 /* VolleyballTests.swift */; };
+		F80D39892AAC7B1600206DB7 /* VolleyballUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80D39882AAC7B1600206DB7 /* VolleyballUITests.swift */; };
+		F80D398B2AAC7B1600206DB7 /* VolleyballUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80D398A2AAC7B1600206DB7 /* VolleyballUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F80D397B2AAC7B1600206DB7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F80D395C2AAC7B1400206DB7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F80D39632AAC7B1400206DB7;
+			remoteInfo = Volleyball;
+		};
+		F80D39852AAC7B1600206DB7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F80D395C2AAC7B1400206DB7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F80D39632AAC7B1400206DB7;
+			remoteInfo = Volleyball;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F80D39642AAC7B1400206DB7 /* Volleyball.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Volleyball.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F80D39672AAC7B1400206DB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F80D39692AAC7B1400206DB7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		F80D396B2AAC7B1400206DB7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F80D396E2AAC7B1400206DB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F80D39702AAC7B1600206DB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F80D39732AAC7B1600206DB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F80D39752AAC7B1600206DB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F80D397A2AAC7B1600206DB7 /* VolleyballTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VolleyballTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F80D397E2AAC7B1600206DB7 /* VolleyballTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolleyballTests.swift; sourceTree = "<group>"; };
+		F80D39842AAC7B1600206DB7 /* VolleyballUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VolleyballUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F80D39882AAC7B1600206DB7 /* VolleyballUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolleyballUITests.swift; sourceTree = "<group>"; };
+		F80D398A2AAC7B1600206DB7 /* VolleyballUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolleyballUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F80D39612AAC7B1400206DB7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F80D39772AAC7B1600206DB7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F80D39812AAC7B1600206DB7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F80D395B2AAC7B1400206DB7 = {
+			isa = PBXGroup;
+			children = (
+				F80D39662AAC7B1400206DB7 /* Volleyball */,
+				F80D397D2AAC7B1600206DB7 /* VolleyballTests */,
+				F80D39872AAC7B1600206DB7 /* VolleyballUITests */,
+				F80D39652AAC7B1400206DB7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F80D39652AAC7B1400206DB7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F80D39642AAC7B1400206DB7 /* Volleyball.app */,
+				F80D397A2AAC7B1600206DB7 /* VolleyballTests.xctest */,
+				F80D39842AAC7B1600206DB7 /* VolleyballUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F80D39662AAC7B1400206DB7 /* Volleyball */ = {
+			isa = PBXGroup;
+			children = (
+				F80D39672AAC7B1400206DB7 /* AppDelegate.swift */,
+				F80D39692AAC7B1400206DB7 /* SceneDelegate.swift */,
+				F80D396B2AAC7B1400206DB7 /* ViewController.swift */,
+				F80D396D2AAC7B1400206DB7 /* Main.storyboard */,
+				F80D39702AAC7B1600206DB7 /* Assets.xcassets */,
+				F80D39722AAC7B1600206DB7 /* LaunchScreen.storyboard */,
+				F80D39752AAC7B1600206DB7 /* Info.plist */,
+			);
+			path = Volleyball;
+			sourceTree = "<group>";
+		};
+		F80D397D2AAC7B1600206DB7 /* VolleyballTests */ = {
+			isa = PBXGroup;
+			children = (
+				F80D397E2AAC7B1600206DB7 /* VolleyballTests.swift */,
+			);
+			path = VolleyballTests;
+			sourceTree = "<group>";
+		};
+		F80D39872AAC7B1600206DB7 /* VolleyballUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F80D39882AAC7B1600206DB7 /* VolleyballUITests.swift */,
+				F80D398A2AAC7B1600206DB7 /* VolleyballUITestsLaunchTests.swift */,
+			);
+			path = VolleyballUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F80D39632AAC7B1400206DB7 /* Volleyball */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F80D398E2AAC7B1600206DB7 /* Build configuration list for PBXNativeTarget "Volleyball" */;
+			buildPhases = (
+				F80D39602AAC7B1400206DB7 /* Sources */,
+				F80D39612AAC7B1400206DB7 /* Frameworks */,
+				F80D39622AAC7B1400206DB7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Volleyball;
+			productName = Volleyball;
+			productReference = F80D39642AAC7B1400206DB7 /* Volleyball.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F80D39792AAC7B1600206DB7 /* VolleyballTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F80D39912AAC7B1600206DB7 /* Build configuration list for PBXNativeTarget "VolleyballTests" */;
+			buildPhases = (
+				F80D39762AAC7B1600206DB7 /* Sources */,
+				F80D39772AAC7B1600206DB7 /* Frameworks */,
+				F80D39782AAC7B1600206DB7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F80D397C2AAC7B1600206DB7 /* PBXTargetDependency */,
+			);
+			name = VolleyballTests;
+			productName = VolleyballTests;
+			productReference = F80D397A2AAC7B1600206DB7 /* VolleyballTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F80D39832AAC7B1600206DB7 /* VolleyballUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F80D39942AAC7B1600206DB7 /* Build configuration list for PBXNativeTarget "VolleyballUITests" */;
+			buildPhases = (
+				F80D39802AAC7B1600206DB7 /* Sources */,
+				F80D39812AAC7B1600206DB7 /* Frameworks */,
+				F80D39822AAC7B1600206DB7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F80D39862AAC7B1600206DB7 /* PBXTargetDependency */,
+			);
+			name = VolleyballUITests;
+			productName = VolleyballUITests;
+			productReference = F80D39842AAC7B1600206DB7 /* VolleyballUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F80D395C2AAC7B1400206DB7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					F80D39632AAC7B1400206DB7 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					F80D39792AAC7B1600206DB7 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = F80D39632AAC7B1400206DB7;
+					};
+					F80D39832AAC7B1600206DB7 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = F80D39632AAC7B1400206DB7;
+					};
+				};
+			};
+			buildConfigurationList = F80D395F2AAC7B1400206DB7 /* Build configuration list for PBXProject "Volleyball" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F80D395B2AAC7B1400206DB7;
+			productRefGroup = F80D39652AAC7B1400206DB7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F80D39632AAC7B1400206DB7 /* Volleyball */,
+				F80D39792AAC7B1600206DB7 /* VolleyballTests */,
+				F80D39832AAC7B1600206DB7 /* VolleyballUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F80D39622AAC7B1400206DB7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F80D39742AAC7B1600206DB7 /* LaunchScreen.storyboard in Resources */,
+				F80D39712AAC7B1600206DB7 /* Assets.xcassets in Resources */,
+				F80D396F2AAC7B1400206DB7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F80D39782AAC7B1600206DB7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F80D39822AAC7B1600206DB7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F80D39602AAC7B1400206DB7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F80D396C2AAC7B1400206DB7 /* ViewController.swift in Sources */,
+				F80D39682AAC7B1400206DB7 /* AppDelegate.swift in Sources */,
+				F80D396A2AAC7B1400206DB7 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F80D39762AAC7B1600206DB7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F80D397F2AAC7B1600206DB7 /* VolleyballTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F80D39802AAC7B1600206DB7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F80D398B2AAC7B1600206DB7 /* VolleyballUITestsLaunchTests.swift in Sources */,
+				F80D39892AAC7B1600206DB7 /* VolleyballUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F80D397C2AAC7B1600206DB7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F80D39632AAC7B1400206DB7 /* Volleyball */;
+			targetProxy = F80D397B2AAC7B1600206DB7 /* PBXContainerItemProxy */;
+		};
+		F80D39862AAC7B1600206DB7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F80D39632AAC7B1400206DB7 /* Volleyball */;
+			targetProxy = F80D39852AAC7B1600206DB7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F80D396D2AAC7B1400206DB7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F80D396E2AAC7B1400206DB7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F80D39722AAC7B1600206DB7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F80D39732AAC7B1600206DB7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F80D398C2AAC7B1600206DB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F80D398D2AAC7B1600206DB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F80D398F2AAC7B1600206DB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2KUAP497LD;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Volleyball/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.antwhale.Volleyball;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F80D39902AAC7B1600206DB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2KUAP497LD;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Volleyball/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.antwhale.Volleyball;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F80D39922AAC7B1600206DB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2KUAP497LD;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.antwhale.VolleyballTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Volleyball.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Volleyball";
+			};
+			name = Debug;
+		};
+		F80D39932AAC7B1600206DB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2KUAP497LD;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.antwhale.VolleyballTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Volleyball.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Volleyball";
+			};
+			name = Release;
+		};
+		F80D39952AAC7B1600206DB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2KUAP497LD;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.antwhale.VolleyballUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Volleyball;
+			};
+			name = Debug;
+		};
+		F80D39962AAC7B1600206DB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2KUAP497LD;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.antwhale.VolleyballUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Volleyball;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F80D395F2AAC7B1400206DB7 /* Build configuration list for PBXProject "Volleyball" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F80D398C2AAC7B1600206DB7 /* Debug */,
+				F80D398D2AAC7B1600206DB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F80D398E2AAC7B1600206DB7 /* Build configuration list for PBXNativeTarget "Volleyball" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F80D398F2AAC7B1600206DB7 /* Debug */,
+				F80D39902AAC7B1600206DB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F80D39912AAC7B1600206DB7 /* Build configuration list for PBXNativeTarget "VolleyballTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F80D39922AAC7B1600206DB7 /* Debug */,
+				F80D39932AAC7B1600206DB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F80D39942AAC7B1600206DB7 /* Build configuration list for PBXNativeTarget "VolleyballUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F80D39952AAC7B1600206DB7 /* Debug */,
+				F80D39962AAC7B1600206DB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F80D395C2AAC7B1400206DB7 /* Project object */;
+}
