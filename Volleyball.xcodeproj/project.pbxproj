@@ -7,15 +7,48 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0207DFCDCC752B76C42B33B6 /* Pods_Volleyball.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C5882ECF1AD037399094FC0 /* Pods_Volleyball.framework */; };
+		D634F7E5B6F0D6D3BE04D4BA /* Pods_Volleyball_VolleyballUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E91B744BDE802D36616D808 /* Pods_Volleyball_VolleyballUITests.framework */; };
+		E491CA861041BA94B9C9A601 /* Pods_VolleyballTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09229BBBC681E5C2C1874454 /* Pods_VolleyballTests.framework */; };
+		F8009C772AB34A8300B712C4 /* TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8009C762AB34A8300B712C4 /* TabCoordinator.swift */; };
+		F8009C792AB35A3C00B712C4 /* ReadyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8009C782AB35A3C00B712C4 /* ReadyViewController.swift */; };
+		F8009C7B2AB35A7600B712C4 /* SteadyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8009C7A2AB35A7600B712C4 /* SteadyViewController.swift */; };
+		F8009C7D2AB35A9C00B712C4 /* GoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8009C7C2AB35A9C00B712C4 /* GoViewController.swift */; };
 		F80D39682AAC7B1400206DB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80D39672AAC7B1400206DB7 /* AppDelegate.swift */; };
 		F80D396A2AAC7B1400206DB7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80D39692AAC7B1400206DB7 /* SceneDelegate.swift */; };
-		F80D396C2AAC7B1400206DB7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80D396B2AAC7B1400206DB7 /* ViewController.swift */; };
-		F80D396F2AAC7B1400206DB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F80D396D2AAC7B1400206DB7 /* Main.storyboard */; };
+		F80D396C2AAC7B1400206DB7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80D396B2AAC7B1400206DB7 /* LoginViewController.swift */; };
 		F80D39712AAC7B1600206DB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F80D39702AAC7B1600206DB7 /* Assets.xcassets */; };
 		F80D39742AAC7B1600206DB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F80D39722AAC7B1600206DB7 /* LaunchScreen.storyboard */; };
 		F80D397F2AAC7B1600206DB7 /* VolleyballTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80D397E2AAC7B1600206DB7 /* VolleyballTests.swift */; };
 		F80D39892AAC7B1600206DB7 /* VolleyballUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80D39882AAC7B1600206DB7 /* VolleyballUITests.swift */; };
 		F80D398B2AAC7B1600206DB7 /* VolleyballUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80D398A2AAC7B1600206DB7 /* VolleyballUITestsLaunchTests.swift */; };
+		F80D399B2AAC812900206DB7 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80D399A2AAC812900206DB7 /* Coordinator.swift */; };
+		F80D399D2AAC82AD00206DB7 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80D399C2AAC82AD00206DB7 /* AppCoordinator.swift */; };
+		F80D39A12AACAAE800206DB7 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80D39A02AACAAE800206DB7 /* LoginCoordinator.swift */; };
+		F80D39A42AACD97F00206DB7 /* TabBarPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80D39A32AACD97F00206DB7 /* TabBarPage.swift */; };
+		F8383C1C2AB5B45A002A849C /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8383C1B2AB5B45A002A849C /* IntroViewController.swift */; };
+		F8383C1F2AB5B5A6002A849C /* OSLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8383C1E2AB5B5A6002A849C /* OSLog.framework */; };
+		F8383C222AB5B5DE002A849C /* OSLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8383C212AB5B5DE002A849C /* OSLog.swift */; };
+		F8383C242AB5CBC2002A849C /* IntroCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8383C232AB5CBC2002A849C /* IntroCoordinator.swift */; };
+		F8383C262AB5D738002A849C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8383C252AB5D738002A849C /* MainViewController.swift */; };
+		F8383C282AB5D8EA002A849C /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8383C272AB5D8EA002A849C /* MainCoordinator.swift */; };
+		F8383C2A2AB5D956002A849C /* MainTabBarPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8383C292AB5D956002A849C /* MainTabBarPage.swift */; };
+		F85526872AC6E72900CA17BC /* TeamRankCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85526862AC6E72900CA17BC /* TeamRankCoordinator.swift */; };
+		F85526892AC6F89800CA17BC /* PlayerRankCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85526882AC6F89800CA17BC /* PlayerRankCoordinator.swift */; };
+		F8695AF92AC9BDA800DAEC13 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8695AF82AC9BDA800DAEC13 /* HomeCoordinator.swift */; };
+		F8695AFB2AC9C1F600DAEC13 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F8695AFA2AC9C1F600DAEC13 /* GoogleService-Info.plist */; };
+		F86E40BE2ABEC44C00827612 /* XmlNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86E40BD2ABEC44C00827612 /* XmlNewsCell.swift */; };
+		F8B3DFAE2AB6D469006F0468 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B3DFAD2AB6D469006F0468 /* HomeViewController.swift */; };
+		F8B3DFB02AB6D498006F0468 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B3DFAF2AB6D498006F0468 /* HomeViewModel.swift */; };
+		F8B3DFB22AB6D4D8006F0468 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B3DFB12AB6D4D8006F0468 /* ScheduleViewController.swift */; };
+		F8B3DFB42AB6D51C006F0468 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B3DFB32AB6D51C006F0468 /* NewsViewController.swift */; };
+		F8B3DFB62AB6D544006F0468 /* TeamRankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B3DFB52AB6D544006F0468 /* TeamRankViewController.swift */; };
+		F8B3DFB82AB6D575006F0468 /* PlayerRankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B3DFB72AB6D575006F0468 /* PlayerRankViewController.swift */; };
+		F8B3DFBB2AB6FA10006F0468 /* XmlNewsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B3DFBA2AB6FA10006F0468 /* XmlNewsData.swift */; };
+		F8B3DFBD2AB6FDE8006F0468 /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B3DFBC2AB6FDE8006F0468 /* NewsViewModel.swift */; };
+		F8B4B3662ACB310600314E67 /* TeamInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B4B3652ACB310600314E67 /* TeamInfo.swift */; };
+		F8E4C73E2ABEED1400579CB6 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E4C73D2ABEED1400579CB6 /* UIImageView+Extension.swift */; };
+		F8E4C7402ABF120800579CB6 /* NewsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E4C73F2ABF120800579CB6 /* NewsCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,11 +69,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		09229BBBC681E5C2C1874454 /* Pods_VolleyballTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VolleyballTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C5882ECF1AD037399094FC0 /* Pods_Volleyball.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Volleyball.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E91B744BDE802D36616D808 /* Pods_Volleyball_VolleyballUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Volleyball_VolleyballUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		182AEE095BFCE48D5725B245 /* Pods-Volleyball.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Volleyball.release.xcconfig"; path = "Target Support Files/Pods-Volleyball/Pods-Volleyball.release.xcconfig"; sourceTree = "<group>"; };
+		1FC19470853766F24019C9F2 /* Pods-VolleyballTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VolleyballTests.release.xcconfig"; path = "Target Support Files/Pods-VolleyballTests/Pods-VolleyballTests.release.xcconfig"; sourceTree = "<group>"; };
+		22C6D21F308B51F88265178E /* Pods-Volleyball-VolleyballUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Volleyball-VolleyballUITests.debug.xcconfig"; path = "Target Support Files/Pods-Volleyball-VolleyballUITests/Pods-Volleyball-VolleyballUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4831EBA1630899A2A726544A /* Pods-Volleyball-VolleyballUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Volleyball-VolleyballUITests.release.xcconfig"; path = "Target Support Files/Pods-Volleyball-VolleyballUITests/Pods-Volleyball-VolleyballUITests.release.xcconfig"; sourceTree = "<group>"; };
+		54AE67E6F1ECE003C50C81D2 /* Pods-Volleyball.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Volleyball.debug.xcconfig"; path = "Target Support Files/Pods-Volleyball/Pods-Volleyball.debug.xcconfig"; sourceTree = "<group>"; };
+		5CCB45631BDD5A3FABE0BD2C /* Pods-VolleyballTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VolleyballTests.debug.xcconfig"; path = "Target Support Files/Pods-VolleyballTests/Pods-VolleyballTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F8009C762AB34A8300B712C4 /* TabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinator.swift; sourceTree = "<group>"; };
+		F8009C782AB35A3C00B712C4 /* ReadyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadyViewController.swift; sourceTree = "<group>"; };
+		F8009C7A2AB35A7600B712C4 /* SteadyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteadyViewController.swift; sourceTree = "<group>"; };
+		F8009C7C2AB35A9C00B712C4 /* GoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoViewController.swift; sourceTree = "<group>"; };
 		F80D39642AAC7B1400206DB7 /* Volleyball.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Volleyball.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F80D39672AAC7B1400206DB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F80D39692AAC7B1400206DB7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F80D396B2AAC7B1400206DB7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F80D396E2AAC7B1400206DB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F80D396B2AAC7B1400206DB7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F80D39702AAC7B1600206DB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F80D39732AAC7B1600206DB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F80D39752AAC7B1600206DB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +94,33 @@
 		F80D39842AAC7B1600206DB7 /* VolleyballUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VolleyballUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F80D39882AAC7B1600206DB7 /* VolleyballUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolleyballUITests.swift; sourceTree = "<group>"; };
 		F80D398A2AAC7B1600206DB7 /* VolleyballUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolleyballUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F80D399A2AAC812900206DB7 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		F80D399C2AAC82AD00206DB7 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		F80D39A02AACAAE800206DB7 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		F80D39A32AACD97F00206DB7 /* TabBarPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPage.swift; sourceTree = "<group>"; };
+		F8383C1B2AB5B45A002A849C /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		F8383C1E2AB5B5A6002A849C /* OSLog.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OSLog.framework; path = System/Library/Frameworks/OSLog.framework; sourceTree = SDKROOT; };
+		F8383C212AB5B5DE002A849C /* OSLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSLog.swift; sourceTree = "<group>"; };
+		F8383C232AB5CBC2002A849C /* IntroCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroCoordinator.swift; sourceTree = "<group>"; };
+		F8383C252AB5D738002A849C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		F8383C272AB5D8EA002A849C /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		F8383C292AB5D956002A849C /* MainTabBarPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarPage.swift; sourceTree = "<group>"; };
+		F85526862AC6E72900CA17BC /* TeamRankCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamRankCoordinator.swift; sourceTree = "<group>"; };
+		F85526882AC6F89800CA17BC /* PlayerRankCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerRankCoordinator.swift; sourceTree = "<group>"; };
+		F8695AF82AC9BDA800DAEC13 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		F8695AFA2AC9C1F600DAEC13 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F86E40BD2ABEC44C00827612 /* XmlNewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XmlNewsCell.swift; sourceTree = "<group>"; };
+		F8B3DFAD2AB6D469006F0468 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F8B3DFAF2AB6D498006F0468 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		F8B3DFB12AB6D4D8006F0468 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+		F8B3DFB32AB6D51C006F0468 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		F8B3DFB52AB6D544006F0468 /* TeamRankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamRankViewController.swift; sourceTree = "<group>"; };
+		F8B3DFB72AB6D575006F0468 /* PlayerRankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerRankViewController.swift; sourceTree = "<group>"; };
+		F8B3DFBA2AB6FA10006F0468 /* XmlNewsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XmlNewsData.swift; sourceTree = "<group>"; };
+		F8B3DFBC2AB6FDE8006F0468 /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
+		F8B4B3652ACB310600314E67 /* TeamInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamInfo.swift; sourceTree = "<group>"; };
+		F8E4C73D2ABEED1400579CB6 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		F8E4C73F2ABF120800579CB6 /* NewsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +128,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8383C1F2AB5B5A6002A849C /* OSLog.framework in Frameworks */,
+				0207DFCDCC752B76C42B33B6 /* Pods_Volleyball.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +137,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E491CA861041BA94B9C9A601 /* Pods_VolleyballTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +145,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D634F7E5B6F0D6D3BE04D4BA /* Pods_Volleyball_VolleyballUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		62BB16974480751094D2A07F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				54AE67E6F1ECE003C50C81D2 /* Pods-Volleyball.debug.xcconfig */,
+				182AEE095BFCE48D5725B245 /* Pods-Volleyball.release.xcconfig */,
+				22C6D21F308B51F88265178E /* Pods-Volleyball-VolleyballUITests.debug.xcconfig */,
+				4831EBA1630899A2A726544A /* Pods-Volleyball-VolleyballUITests.release.xcconfig */,
+				5CCB45631BDD5A3FABE0BD2C /* Pods-VolleyballTests.debug.xcconfig */,
+				1FC19470853766F24019C9F2 /* Pods-VolleyballTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F80D395B2AAC7B1400206DB7 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +172,8 @@
 				F80D397D2AAC7B1600206DB7 /* VolleyballTests */,
 				F80D39872AAC7B1600206DB7 /* VolleyballUITests */,
 				F80D39652AAC7B1400206DB7 /* Products */,
+				F8383C1D2AB5B5A6002A849C /* Frameworks */,
+				62BB16974480751094D2A07F /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,13 +190,19 @@
 		F80D39662AAC7B1400206DB7 /* Volleyball */ = {
 			isa = PBXGroup;
 			children = (
+				F86E40BC2ABEC3DC00827612 /* Views */,
+				F8B3DFB92AB6F9CE006F0468 /* Data */,
+				F8383C202AB5B5CE002A849C /* Utils */,
+				F80D39A22AACD97100206DB7 /* Enums */,
+				F80D39992AAC80CD00206DB7 /* Coordinators */,
+				F80D39982AAC7DF400206DB7 /* ViewModels */,
+				F80D39972AAC7C1700206DB7 /* ViewControllers */,
 				F80D39672AAC7B1400206DB7 /* AppDelegate.swift */,
 				F80D39692AAC7B1400206DB7 /* SceneDelegate.swift */,
-				F80D396B2AAC7B1400206DB7 /* ViewController.swift */,
-				F80D396D2AAC7B1400206DB7 /* Main.storyboard */,
 				F80D39702AAC7B1600206DB7 /* Assets.xcassets */,
 				F80D39722AAC7B1600206DB7 /* LaunchScreen.storyboard */,
 				F80D39752AAC7B1600206DB7 /* Info.plist */,
+				F8695AFA2AC9C1F600DAEC13 /* GoogleService-Info.plist */,
 			);
 			path = Volleyball;
 			sourceTree = "<group>";
@@ -127,6 +224,96 @@
 			path = VolleyballUITests;
 			sourceTree = "<group>";
 		};
+		F80D39972AAC7C1700206DB7 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F80D396B2AAC7B1400206DB7 /* LoginViewController.swift */,
+				F8009C782AB35A3C00B712C4 /* ReadyViewController.swift */,
+				F8009C7A2AB35A7600B712C4 /* SteadyViewController.swift */,
+				F8009C7C2AB35A9C00B712C4 /* GoViewController.swift */,
+				F8383C1B2AB5B45A002A849C /* IntroViewController.swift */,
+				F8383C252AB5D738002A849C /* MainViewController.swift */,
+				F8B3DFAD2AB6D469006F0468 /* HomeViewController.swift */,
+				F8B3DFB12AB6D4D8006F0468 /* ScheduleViewController.swift */,
+				F8B3DFB32AB6D51C006F0468 /* NewsViewController.swift */,
+				F8B3DFB52AB6D544006F0468 /* TeamRankViewController.swift */,
+				F8B3DFB72AB6D575006F0468 /* PlayerRankViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F80D39982AAC7DF400206DB7 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F8B3DFAF2AB6D498006F0468 /* HomeViewModel.swift */,
+				F8B3DFBC2AB6FDE8006F0468 /* NewsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F80D39992AAC80CD00206DB7 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				F80D399A2AAC812900206DB7 /* Coordinator.swift */,
+				F80D399C2AAC82AD00206DB7 /* AppCoordinator.swift */,
+				F80D39A02AACAAE800206DB7 /* LoginCoordinator.swift */,
+				F8009C762AB34A8300B712C4 /* TabCoordinator.swift */,
+				F8383C232AB5CBC2002A849C /* IntroCoordinator.swift */,
+				F8383C272AB5D8EA002A849C /* MainCoordinator.swift */,
+				F8E4C73F2ABF120800579CB6 /* NewsCoordinator.swift */,
+				F85526862AC6E72900CA17BC /* TeamRankCoordinator.swift */,
+				F85526882AC6F89800CA17BC /* PlayerRankCoordinator.swift */,
+				F8695AF82AC9BDA800DAEC13 /* HomeCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		F80D39A22AACD97100206DB7 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				F80D39A32AACD97F00206DB7 /* TabBarPage.swift */,
+				F8383C292AB5D956002A849C /* MainTabBarPage.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		F8383C1D2AB5B5A6002A849C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F8383C1E2AB5B5A6002A849C /* OSLog.framework */,
+				0C5882ECF1AD037399094FC0 /* Pods_Volleyball.framework */,
+				0E91B744BDE802D36616D808 /* Pods_Volleyball_VolleyballUITests.framework */,
+				09229BBBC681E5C2C1874454 /* Pods_VolleyballTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F8383C202AB5B5CE002A849C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F8383C212AB5B5DE002A849C /* OSLog.swift */,
+				F8E4C73D2ABEED1400579CB6 /* UIImageView+Extension.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		F86E40BC2ABEC3DC00827612 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F86E40BD2ABEC44C00827612 /* XmlNewsCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F8B3DFB92AB6F9CE006F0468 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F8B3DFBA2AB6FA10006F0468 /* XmlNewsData.swift */,
+				F8B4B3652ACB310600314E67 /* TeamInfo.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,9 +321,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F80D398E2AAC7B1600206DB7 /* Build configuration list for PBXNativeTarget "Volleyball" */;
 			buildPhases = (
+				7396BA35B14B93C24EC9473A /* [CP] Check Pods Manifest.lock */,
 				F80D39602AAC7B1400206DB7 /* Sources */,
 				F80D39612AAC7B1400206DB7 /* Frameworks */,
 				F80D39622AAC7B1400206DB7 /* Resources */,
+				A109533F5CCF71F9E9E2F453 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -151,6 +340,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F80D39912AAC7B1600206DB7 /* Build configuration list for PBXNativeTarget "VolleyballTests" */;
 			buildPhases = (
+				6C76F9AEFA4DE5CED004901C /* [CP] Check Pods Manifest.lock */,
 				F80D39762AAC7B1600206DB7 /* Sources */,
 				F80D39772AAC7B1600206DB7 /* Frameworks */,
 				F80D39782AAC7B1600206DB7 /* Resources */,
@@ -169,9 +359,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F80D39942AAC7B1600206DB7 /* Build configuration list for PBXNativeTarget "VolleyballUITests" */;
 			buildPhases = (
+				C2216879D12AFC76E4CC522B /* [CP] Check Pods Manifest.lock */,
 				F80D39802AAC7B1600206DB7 /* Sources */,
 				F80D39812AAC7B1600206DB7 /* Frameworks */,
 				F80D39822AAC7B1600206DB7 /* Resources */,
+				8F9A647DB55B7BA194B50FFF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -233,7 +425,7 @@
 			files = (
 				F80D39742AAC7B1600206DB7 /* LaunchScreen.storyboard in Resources */,
 				F80D39712AAC7B1600206DB7 /* Assets.xcassets in Resources */,
-				F80D396F2AAC7B1400206DB7 /* Main.storyboard in Resources */,
+				F8695AFB2AC9C1F600DAEC13 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,14 +445,146 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6C76F9AEFA4DE5CED004901C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VolleyballTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7396BA35B14B93C24EC9473A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Volleyball-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8F9A647DB55B7BA194B50FFF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Volleyball-VolleyballUITests/Pods-Volleyball-VolleyballUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Volleyball-VolleyballUITests/Pods-Volleyball-VolleyballUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Volleyball-VolleyballUITests/Pods-Volleyball-VolleyballUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A109533F5CCF71F9E9E2F453 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Volleyball/Pods-Volleyball-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Volleyball/Pods-Volleyball-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Volleyball/Pods-Volleyball-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C2216879D12AFC76E4CC522B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Volleyball-VolleyballUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F80D39602AAC7B1400206DB7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F80D396C2AAC7B1400206DB7 /* ViewController.swift in Sources */,
+				F8B3DFB02AB6D498006F0468 /* HomeViewModel.swift in Sources */,
+				F80D39A12AACAAE800206DB7 /* LoginCoordinator.swift in Sources */,
+				F80D399B2AAC812900206DB7 /* Coordinator.swift in Sources */,
+				F8009C7B2AB35A7600B712C4 /* SteadyViewController.swift in Sources */,
+				F8383C1C2AB5B45A002A849C /* IntroViewController.swift in Sources */,
+				F8009C772AB34A8300B712C4 /* TabCoordinator.swift in Sources */,
+				F8B3DFAE2AB6D469006F0468 /* HomeViewController.swift in Sources */,
+				F80D396C2AAC7B1400206DB7 /* LoginViewController.swift in Sources */,
+				F8B3DFB82AB6D575006F0468 /* PlayerRankViewController.swift in Sources */,
+				F8009C792AB35A3C00B712C4 /* ReadyViewController.swift in Sources */,
 				F80D39682AAC7B1400206DB7 /* AppDelegate.swift in Sources */,
+				F85526892AC6F89800CA17BC /* PlayerRankCoordinator.swift in Sources */,
+				F8B3DFBB2AB6FA10006F0468 /* XmlNewsData.swift in Sources */,
+				F8E4C73E2ABEED1400579CB6 /* UIImageView+Extension.swift in Sources */,
+				F86E40BE2ABEC44C00827612 /* XmlNewsCell.swift in Sources */,
+				F8B3DFBD2AB6FDE8006F0468 /* NewsViewModel.swift in Sources */,
+				F8009C7D2AB35A9C00B712C4 /* GoViewController.swift in Sources */,
+				F8383C282AB5D8EA002A849C /* MainCoordinator.swift in Sources */,
+				F8383C262AB5D738002A849C /* MainViewController.swift in Sources */,
+				F80D399D2AAC82AD00206DB7 /* AppCoordinator.swift in Sources */,
+				F8383C222AB5B5DE002A849C /* OSLog.swift in Sources */,
+				F8B3DFB62AB6D544006F0468 /* TeamRankViewController.swift in Sources */,
+				F8E4C7402ABF120800579CB6 /* NewsCoordinator.swift in Sources */,
+				F8B3DFB22AB6D4D8006F0468 /* ScheduleViewController.swift in Sources */,
+				F85526872AC6E72900CA17BC /* TeamRankCoordinator.swift in Sources */,
+				F80D39A42AACD97F00206DB7 /* TabBarPage.swift in Sources */,
 				F80D396A2AAC7B1400206DB7 /* SceneDelegate.swift in Sources */,
+				F8695AF92AC9BDA800DAEC13 /* HomeCoordinator.swift in Sources */,
+				F8B4B3662ACB310600314E67 /* TeamInfo.swift in Sources */,
+				F8B3DFB42AB6D51C006F0468 /* NewsViewController.swift in Sources */,
+				F8383C2A2AB5D956002A849C /* MainTabBarPage.swift in Sources */,
+				F8383C242AB5CBC2002A849C /* IntroCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +621,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		F80D396D2AAC7B1400206DB7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F80D396E2AAC7B1400206DB7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F80D39722AAC7B1600206DB7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -432,6 +748,7 @@
 		};
 		F80D398F2AAC7B1600206DB7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54AE67E6F1ECE003C50C81D2 /* Pods-Volleyball.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -442,7 +759,6 @@
 				INFOPLIST_FILE = Volleyball/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -450,7 +766,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = io.github.antwhale.Volleyball;
+				PRODUCT_BUNDLE_IDENTIFIER = org.techtown.volleyball;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -460,6 +776,7 @@
 		};
 		F80D39902AAC7B1600206DB7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 182AEE095BFCE48D5725B245 /* Pods-Volleyball.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -470,7 +787,6 @@
 				INFOPLIST_FILE = Volleyball/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -478,7 +794,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = io.github.antwhale.Volleyball;
+				PRODUCT_BUNDLE_IDENTIFIER = org.techtown.volleyball;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -488,6 +804,7 @@
 		};
 		F80D39922AAC7B1600206DB7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5CCB45631BDD5A3FABE0BD2C /* Pods-VolleyballTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -508,6 +825,7 @@
 		};
 		F80D39932AAC7B1600206DB7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1FC19470853766F24019C9F2 /* Pods-VolleyballTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -528,6 +846,7 @@
 		};
 		F80D39952AAC7B1600206DB7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22C6D21F308B51F88265178E /* Pods-Volleyball-VolleyballUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -546,6 +865,7 @@
 		};
 		F80D39962AAC7B1600206DB7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4831EBA1630899A2A726544A /* Pods-Volleyball-VolleyballUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

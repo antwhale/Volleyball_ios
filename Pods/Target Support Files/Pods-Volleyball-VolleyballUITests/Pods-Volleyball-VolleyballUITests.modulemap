@@ -1,0 +1,6 @@
+framework module Pods_Volleyball_VolleyballUITests {
+  umbrella header "Pods-Volleyball-VolleyballUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
