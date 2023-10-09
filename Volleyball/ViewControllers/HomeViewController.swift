@@ -16,13 +16,14 @@ class HomeViewController: UIViewController {
     
     let scrollView : UIScrollView = {
         let scrollView = UIScrollView()
-        scrollView.backgroundColor = .brown
         scrollView.showsVerticalScrollIndicator = false
+        scrollView.backgroundColor = .systemRed
         return scrollView
     }()
     
     let scrollContentView: UIView = {
         let view = UIView()
+        view.backgroundColor = .systemCyan
         return view
     }()
     
@@ -120,9 +121,101 @@ class HomeViewController: UIViewController {
         return label
     }()
     
+    let newsImageView : UIImageView = {
+        let imageView = UIImageView()
+        imageView.isUserInteractionEnabled = true
+        return imageView
+    }()
+    
+    let newsTitleLabel1 : UILabel = {
+        let label = UILabel()
+        label.textColor = .black
+        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.textAlignment = .center
+        label.isUserInteractionEnabled = true
+        return label
+    }()
+    
+    let newsTitleLabel2 : UILabel = {
+        let label = UILabel()
+        label.textColor = .gray
+        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.textAlignment = .center
+        label.isUserInteractionEnabled = true
+
+        return label
+    }()
+    
+    let newsTitleLabel3 : UILabel = {
+        let label = UILabel()
+        label.textColor = .gray
+        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.textAlignment = .center
+        label.isUserInteractionEnabled = true
+
+        return label
+    }()
+    
+    let newsTitleLabel4 : UILabel = {
+        let label = UILabel()
+        label.textColor = .gray
+        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.textAlignment = .center
+        label.isUserInteractionEnabled = true
+
+        return label
+    }()
+    
+    let kovoMarketImageView : UIImageView = {
+        let imageView = UIImageView()
+        imageView.isUserInteractionEnabled = true
+        imageView.contentMode = .scaleToFill
+        imageView.image = UIImage(named: "kovomarket")
+        return imageView
+    }()
+    
+    let testBtn : UIButton = {
+       let button = UIButton()
+        button.setTitle("test button", for: .normal)
+        button.backgroundColor = .blue
+        return button
+    }()
+    
+    let instaLabel : UILabel = {
+        let label = UILabel()
+        label.text = "인스타"
+        label.textColor = .black
+        label.font = UIFont.boldSystemFont(ofSize: 18)
+        
+        return label
+    }()
+    
+    let instaCollectionViewFlowLayout: UICollectionViewFlowLayout = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.minimumInteritemSpacing = 8.0
+        layout.itemSize = CGSize(width: 100, height: 100)
+        return layout
+    }()
+    
+    lazy var instaCollectionView : UICollectionView = {
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: self.instaCollectionViewFlowLayout)
+        collectionView.isScrollEnabled = true
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.showsVerticalScrollIndicator = true
+        collectionView.contentInset = .zero
+        collectionView.backgroundColor = .black
+        collectionView.clipsToBounds = true
+    
+        collectionView.register(InstaCollectionViewCell.self, forCellWithReuseIdentifier: InstaCollectionViewCell.id)
+        
+        return collectionView
+    }()
+    
+    
     let disposeBag = DisposeBag()
     
-    override func viewDidLoad(){
+    override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .white
@@ -130,8 +223,22 @@ class HomeViewController: UIViewController {
         setupView()
         initSubscribe()
         
+        let singleTap = UITapGestureRecognizer(target: self, action: #selector(openNewsUrl))
+        
+//        self.view.isUserInteractionEnabled = true
+//        self.view.addGestureRecognizer(singleTap)
+     
+//        self.scrollView.isUserInteractionEnabled = true
+//        self.scrollView.addGestureRecognizer(singleTap)
+        
+//        self.newsImageView.isUserInteractionEnabled = true
+//        self.newsImageView.addGestureRecognizer(singleTap)
+//
+//        self.scrollContentView.isUserInteractionEnabled = true
+//
+//        self.testBtn.addTarget(self, action: #selector(clickTest), for: .touchUpInside)
+        
     }
-    
     
     private func setupView() {
         view.addSubview(scrollView)
@@ -147,7 +254,7 @@ class HomeViewController: UIViewController {
         scrollContentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
         scrollContentView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
         scrollContentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
-        scrollContentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
+        scrollContentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 1.0).isActive = true
 
         scrollContentView.addSubview(todayMatchLabel)
         todayMatchLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -191,7 +298,6 @@ class HomeViewController: UIViewController {
         womanMatchPlaceLabel1.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor).isActive = true
         womanMatchPlaceLabel1.topAnchor.constraint(equalTo: womanMatchDateLabel1.bottomAnchor, constant: 5).isActive = true
         
-        
         scrollContentView.addSubview(womanMatchRoundLabel1)
         womanMatchRoundLabel1.translatesAutoresizingMaskIntoConstraints = false
         womanMatchRoundLabel1.leadingAnchor.constraint(equalTo: scrollContentView.leadingAnchor).isActive = true
@@ -216,6 +322,72 @@ class HomeViewController: UIViewController {
         ourTeamNewsLabel.leadingAnchor.constraint(equalTo: scrollContentView.leadingAnchor, constant: 10).isActive = true
         ourTeamNewsLabel.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor).isActive = true
         ourTeamNewsLabel.topAnchor.constraint(equalTo: divider1.bottomAnchor, constant: 10).isActive = true
+        
+        scrollContentView.addSubview(newsImageView)
+        newsImageView.translatesAutoresizingMaskIntoConstraints = false
+        newsImageView.leadingAnchor.constraint(equalTo: ourTeamNewsLabel.leadingAnchor).isActive = true
+        newsImageView.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor, constant: -10).isActive = true
+        newsImageView.topAnchor.constraint(equalTo: ourTeamNewsLabel.bottomAnchor, constant: 10).isActive = true
+        
+        scrollContentView.addSubview(newsTitleLabel1)
+        newsTitleLabel1.translatesAutoresizingMaskIntoConstraints = false
+        newsTitleLabel1.leadingAnchor.constraint(equalTo: newsImageView.leadingAnchor).isActive = true
+        newsTitleLabel1.trailingAnchor.constraint(equalTo: newsImageView.trailingAnchor).isActive = true
+        newsTitleLabel1.topAnchor.constraint(equalTo: newsImageView.bottomAnchor, constant: 10).isActive = true
+        
+        scrollContentView.addSubview(newsTitleLabel2)
+        newsTitleLabel2.translatesAutoresizingMaskIntoConstraints = false
+        newsTitleLabel2.leadingAnchor.constraint(equalTo: newsTitleLabel1.leadingAnchor).isActive = true
+        newsTitleLabel2.trailingAnchor.constraint(equalTo: newsTitleLabel1.trailingAnchor).isActive = true
+        newsTitleLabel2.topAnchor.constraint(equalTo: newsTitleLabel1.bottomAnchor, constant: 15).isActive = true
+        
+        scrollContentView.addSubview(newsTitleLabel3)
+        newsTitleLabel3.translatesAutoresizingMaskIntoConstraints = false
+        newsTitleLabel3.leadingAnchor.constraint(equalTo: newsTitleLabel2.leadingAnchor).isActive = true
+        newsTitleLabel3.trailingAnchor.constraint(equalTo: newsTitleLabel2.trailingAnchor).isActive = true
+        newsTitleLabel3.topAnchor.constraint(equalTo: newsTitleLabel2.bottomAnchor, constant: 15).isActive = true
+        
+        scrollContentView.addSubview(newsTitleLabel4)
+        newsTitleLabel4.translatesAutoresizingMaskIntoConstraints = false
+        newsTitleLabel4.leadingAnchor.constraint(equalTo: newsTitleLabel3.leadingAnchor).isActive = true
+        newsTitleLabel4.trailingAnchor.constraint(equalTo: newsTitleLabel3.trailingAnchor).isActive = true
+        newsTitleLabel4.topAnchor.constraint(equalTo: newsTitleLabel3.bottomAnchor, constant: 15).isActive = true
+        newsTitleLabel4.backgroundColor = .systemPink
+        
+        scrollContentView.addSubview(kovoMarketImageView)
+        kovoMarketImageView.translatesAutoresizingMaskIntoConstraints = false
+        kovoMarketImageView.leadingAnchor.constraint(equalTo: scrollContentView.leadingAnchor).isActive = true
+        kovoMarketImageView.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor).isActive = true
+        kovoMarketImageView.topAnchor.constraint(equalTo: newsTitleLabel4.bottomAnchor, constant: 15).isActive = true
+        kovoMarketImageView.backgroundColor = .black
+        kovoMarketImageView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+        
+        let kovoMarketTap = UITapGestureRecognizerWithUrl(target: self, action: #selector(self.openNewsUrl(sender:)))
+        kovoMarketTap.url = "https://www.kovomarket.co.kr/"
+        kovoMarketImageView.addGestureRecognizer(kovoMarketTap)
+        
+        scrollContentView.addSubview(instaLabel)
+        instaLabel.translatesAutoresizingMaskIntoConstraints = false
+        instaLabel.leadingAnchor.constraint(equalTo: scrollContentView.leadingAnchor, constant: 10).isActive = true
+        instaLabel.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor).isActive = true
+        instaLabel.topAnchor.constraint(equalTo: kovoMarketImageView.bottomAnchor, constant: 15).isActive = true
+        
+        scrollContentView.addSubview(instaCollectionView)
+        instaCollectionView.translatesAutoresizingMaskIntoConstraints = false
+        instaCollectionView.leadingAnchor.constraint(equalTo: scrollContentView.leadingAnchor).isActive = true
+        instaCollectionView.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor).isActive = true
+        instaCollectionView.topAnchor.constraint(equalTo: instaLabel.bottomAnchor, constant: 10).isActive = true
+        
+        instaCollectionView.bottomAnchor.constraint(equalTo: scrollContentView.bottomAnchor).isActive = true
+        instaCollectionView.heightAnchor.constraint(equalToConstant: 100).isActive = true
+//        instaCollectionView.bottomAnchor.constraint(equalTo: scrollContentView.bottomAnchor).isActive = true
+        
+//        scrollContentView.addSubview(testBtn)
+//        testBtn.translatesAutoresizingMaskIntoConstraints = false
+//        testBtn.leadingAnchor.constraint(equalTo: kovoMarketImageView.leadingAnchor).isActive = true
+//        testBtn.trailingAnchor.constraint(equalTo: kovoMarketImageView.trailingAnchor).isActive = true
+//        testBtn.topAnchor.constraint(equalTo: instaCollectionView.bottomAnchor, constant: 10).isActive = true
+//        testBtn.bottomAnchor.constraint(equalTo: scrollContentView.bottomAnchor).isActive = true
         
     }
     
@@ -286,10 +458,76 @@ class HomeViewController: UIViewController {
             .subscribe(onNext: { [weak self] newsList in
                 Log.debug(self?.tag, "newsList: \(newsList)")
                 
+                //뉴스 이미지와 타이틀 바인딩
+                guard let thumbUrl = URL(string: newsList[0].thumbUrl) else { return }
+                self?.newsImageView.loadImageUrl(url: thumbUrl)
+                self?.newsTitleLabel1.text = newsList[0].title
+                
+                self?.newsTitleLabel2.text = newsList[1].title
+                self?.newsTitleLabel3.text = newsList[2].title
+                self?.newsTitleLabel4.text = newsList[3].title
+                
+                //클릭시 뉴스url 이동
+                let firstNewsTap = UITapGestureRecognizerWithUrl(target: self, action: #selector(self?.openNewsUrl(sender:)))
+                firstNewsTap.url = newsList[0].newsUrl
+                self?.newsImageView.addGestureRecognizer(firstNewsTap)
+                self?.newsTitleLabel1.addGestureRecognizer(firstNewsTap)
+                
+                let secondNewsTap = UITapGestureRecognizerWithUrl(target: self, action: #selector(self?.openNewsUrl(sender:)))
+                secondNewsTap.url = newsList[1].newsUrl
+                self?.newsTitleLabel2.addGestureRecognizer(secondNewsTap)
+                
+                let thirdNewsTap = UITapGestureRecognizerWithUrl(target: self, action: #selector(self?.openNewsUrl(sender:)))
+                thirdNewsTap.url = newsList[2].newsUrl
+                self?.newsTitleLabel3.addGestureRecognizer(thirdNewsTap)
+                
+                let fourthNewsTap = UITapGestureRecognizerWithUrl(target: self, action: #selector(self?.openNewsUrl(sender:)))
+                fourthNewsTap.url = newsList[3].newsUrl
+                self?.newsTitleLabel4.addGestureRecognizer(fourthNewsTap)
                 
             }).disposed(by: disposeBag)
+        
+        homeViewModel.instaItemSubject.subscribe(onNext: { [weak self] instaArray in
+            for item in instaArray {
+                Log.debug(self!.tag, "bjs link: \(item.linkUrl), img: \(item.thumbUrl)")
+            }
+        }).disposed(by: disposeBag)
+        
+        homeViewModel.instaItemSubject.asObservable()
+            .do(onNext: { item in
+//                print("onNext start, thumbUrl: \(item.thumbUrl), linkUrl: \(item.linkUrl)")
+                print("onNext start")
+            })
+                .do(onSubscribe: {
+                    print("onSubscribe start")
+                })
+            .bind(to: self.instaCollectionView.rx.items(cellIdentifier: "InstaCollectionViewCell", cellType: InstaCollectionViewCell.self)){ index, item, cell in
+                print("야호")
+                
+                guard let instaThumbUrl = URL(string: item.thumbUrl) else { return }
+                cell.setThumbImage(imgUrl: instaThumbUrl)
+                cell.setInstaLink(link: item.linkUrl)
+            
+            }.disposed(by: disposeBag)
+        
+        homeViewModel.getInstaInfo(team: 0)
+        
+           
     }
     
+    @objc func openNewsUrl(sender: UITapGestureRecognizerWithUrl) {
+        Log.debug(self.tag, "openNewsUrl")
+        if let url = URL(string: sender.url) {
+            UIApplication.shared.open(url, options: [:])
+        }
+    }
     
-    
+    @objc func clickTest() {
+        print("clickTest")
+    }
 }
+
+class UITapGestureRecognizerWithUrl : UITapGestureRecognizer {
+    var url: String = ""
+}
+

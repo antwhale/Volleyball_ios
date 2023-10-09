@@ -15,6 +15,7 @@ class HomeViewModel {
     let tag = "HomeViewModel"
     let ref = Database.database().reference()
     
+    let instaItemSubject = PublishSubject<[MyTeamInstaItem]>()
     let disposeBag = DisposeBag()
     
     let teamList = [
@@ -77,7 +78,59 @@ class HomeViewModel {
         }
     }
     
+    func getInstaInfo(team: Int) {
+        return ref.child("Insta")
+            .child(intToTeam(team: team))
+            .observeSingleEvent(of: .value, with: { [weak self] snapshot in
+            let value = snapshot.value as? NSArray
+                        
+            var instaArray: [MyTeamInstaItem] = []
+            for i in 0...4 {
+                if let instaLink = (value?[i] as? NSDictionary)?["link"] as? String,
+                   let instaImgUrl = (value?[i] as? NSDictionary)?["imgUrl"] as? String {
+                    instaArray.append(MyTeamInstaItem(thumbUrl: instaImgUrl, linkUrl: instaLink))
+                }
+            }
+            self?.instaItemSubject.onNext(instaArray)
+    })
+                                }
     
+    private func intToTeam(team: Int) -> String{
+        switch team {
+        case 0:
+            return "GS"
+        case 1:
+            return "IBK"
+        case 2:
+            return "Hypass"
+        case 3:
+            return "KGC"
+        case 4:
+            return "Pepper"
+        case 5:
+            return "Hillstate"
+        case 6:
+            return "PinkSpiders"
+        case 7:
+            return "KB"
+        case 8:
+            return "OK"
+        case 9:
+            return "Jumbos"
+        case 10:
+            return "Samsung"
+        case 11:
+            return "Woori"
+        case 12:
+            return "Kepco"
+        case 13:
+            return "SkyWalkers"
+        case 14:
+            return "KOVO"
+        default:
+            return "KOVO"
+        }
+    }
 }
 
 struct MyTeamNewsItem {
@@ -85,8 +138,21 @@ struct MyTeamNewsItem {
     let newsUrl: String
     let title: String
 }
+// : IteratorProtocol, Sequence 
+struct MyTeamInstaItem{
+//    var count: Int
+    let thumbUrl: String
+    let linkUrl: String
+    
+//    mutating func next() -> Int? {
+//        if count == 0 {return nil}
+//        defer {count -= 1}
+//        return count
+//    }
 
-class NewsUrlError : Error {
+   
 }
+
+
 
 

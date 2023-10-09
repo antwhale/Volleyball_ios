@@ -31,7 +31,6 @@ class XmlNewsCell : UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         setupLayout()
-        
     }
     
     required init?(coder: NSCoder) {
