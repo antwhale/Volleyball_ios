@@ -14,7 +14,7 @@ class InstaCollectionViewCell : UICollectionViewCell {
     
     private let thumbImageView : UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         
         return imageView
     }()

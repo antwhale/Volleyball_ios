@@ -203,8 +203,8 @@ class HomeViewController: UIViewController {
         collectionView.isScrollEnabled = true
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.showsVerticalScrollIndicator = true
-        collectionView.contentInset = .zero
-        collectionView.backgroundColor = .black
+        collectionView.contentInset = .init(top: 0.0, left: 8.0, bottom: 0.0, right: 8.0)
+//        collectionView.backgroundColor = .black
         collectionView.clipsToBounds = true
     
         collectionView.register(InstaCollectionViewCell.self, forCellWithReuseIdentifier: InstaCollectionViewCell.id)
@@ -212,6 +212,11 @@ class HomeViewController: UIViewController {
         return collectionView
     }()
     
+    let divider2 : UIView = {
+        let view = UIView()
+        view.backgroundColor = .systemGray5
+        return view
+    }()
     
     let disposeBag = DisposeBag()
     
@@ -377,10 +382,17 @@ class HomeViewController: UIViewController {
         instaCollectionView.leadingAnchor.constraint(equalTo: scrollContentView.leadingAnchor).isActive = true
         instaCollectionView.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor).isActive = true
         instaCollectionView.topAnchor.constraint(equalTo: instaLabel.bottomAnchor, constant: 10).isActive = true
-        
-        instaCollectionView.bottomAnchor.constraint(equalTo: scrollContentView.bottomAnchor).isActive = true
         instaCollectionView.heightAnchor.constraint(equalToConstant: 100).isActive = true
-//        instaCollectionView.bottomAnchor.constraint(equalTo: scrollContentView.bottomAnchor).isActive = true
+        
+        scrollContentView.addSubview(divider2)
+        divider2.translatesAutoresizingMaskIntoConstraints = false
+        divider2.leadingAnchor.constraint(equalTo: scrollContentView.leadingAnchor).isActive = true
+        divider2.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor).isActive = true
+        divider2.topAnchor.constraint(equalTo: instaCollectionView.bottomAnchor, constant: 10).isActive = true
+        divider2.heightAnchor.constraint(equalToConstant: 15).isActive = true
+        divider2.bottomAnchor.constraint(equalTo: scrollContentView.bottomAnchor).isActive = true
+        
+        
         
 //        scrollContentView.addSubview(testBtn)
 //        testBtn.translatesAutoresizingMaskIntoConstraints = false
@@ -503,6 +515,7 @@ class HomeViewController: UIViewController {
                 })
             .bind(to: self.instaCollectionView.rx.items(cellIdentifier: "InstaCollectionViewCell", cellType: InstaCollectionViewCell.self)){ index, item, cell in
                 print("야호")
+                print("item.thumbUrl: \(item.thumbUrl), item.linkUrl: \(item.linkUrl)")
                 
                 guard let instaThumbUrl = URL(string: item.thumbUrl) else { return }
                 cell.setThumbImage(imgUrl: instaThumbUrl)
@@ -511,7 +524,16 @@ class HomeViewController: UIViewController {
             }.disposed(by: disposeBag)
         
         homeViewModel.getInstaInfo(team: 0)
-        
+        //instagram://media?id=1346423547953773636_401375631
+        instaCollectionView.rx.modelSelected(MyTeamInstaItem.self)
+                    .subscribe { instaItem in
+                        let instaUrlID = instaItem.linkUrl.split(separator: "p")[1].replacingOccurrences(of: "/", with: "")
+                        
+                        if let url = URL(string: "instagram://media?id=\(instaUrlID)") {
+                            UIApplication.shared.open(url, options: [:])
+                        }
+                    }
+                    .disposed(by: disposeBag)
            
     }
     
