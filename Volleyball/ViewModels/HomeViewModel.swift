@@ -82,18 +82,52 @@ class HomeViewModel {
         return ref.child("Insta")
             .child(intToTeam(team: team))
             .observeSingleEvent(of: .value, with: { [weak self] snapshot in
-            let value = snapshot.value as? NSArray
-                        
-            var instaArray: [MyTeamInstaItem] = []
-            for i in 0...4 {
-                if let instaLink = (value?[i] as? NSDictionary)?["link"] as? String,
-                   let instaImgUrl = (value?[i] as? NSDictionary)?["imgUrl"] as? String {
-                    instaArray.append(MyTeamInstaItem(thumbUrl: instaImgUrl, linkUrl: instaLink))
+                let value = snapshot.value as? NSArray
+                            
+                var instaArray: [MyTeamInstaItem] = []
+                for i in 0...4 {
+                    if let instaLink = (value?[i] as? NSDictionary)?["link"] as? String,
+                       let instaImgUrl = (value?[i] as? NSDictionary)?["imgUrl"] as? String {
+                        instaArray.append(MyTeamInstaItem(thumbUrl: instaImgUrl, linkUrl: instaLink))
+                    }
                 }
+                self?.instaItemSubject.onNext(instaArray)
+            })
+    }
+    
+    func getNaverTvInfo(team: Int) -> Observable<[SliderItem]> {
+        Log.debug(tag, "getNaverTvInfo")
+        
+        return Observable.create { observer in
+            
+            guard let naverTvUrl = URL(string: "https://tv.naver.com/" + self.teamList[team].team_youtube) else {return Disposables.create()}
+            
+            do {
+                var sliderItemList : [SliderItem] = []
+                let html = try String(contentsOf: naverTvUrl, encoding: .utf8)
+                let doc: Document = try SwiftSoup.parse(html)
+                
+                let elements = try doc.select("div[class=cds _MM_CARD  ]")
+                
+                for i in 0...4 {
+                    let naverUrl = try elements.get(i).select("div.cds_type a.cds_thm").attr("href")
+                    let imgUrl = try elements.get(i).select("img").attr("src")
+                    
+                    sliderItemList.append(SliderItem(thumbUrl: imgUrl, naverUrl: naverUrl))
+                }
+                
+                observer.onNext(sliderItemList)
+
+            } catch let error {
+                observer.onError(error)
             }
-            self?.instaItemSubject.onNext(instaArray)
-    })
-                                }
+            
+            return Disposables.create {}
+        }
+        
+    }
+    
+    
     
     private func intToTeam(team: Int) -> String{
         switch team {
@@ -138,19 +172,15 @@ struct MyTeamNewsItem {
     let newsUrl: String
     let title: String
 }
-// : IteratorProtocol, Sequence 
-struct MyTeamInstaItem{
-//    var count: Int
+
+struct MyTeamInstaItem {
     let thumbUrl: String
     let linkUrl: String
-    
-//    mutating func next() -> Int? {
-//        if count == 0 {return nil}
-//        defer {count -= 1}
-//        return count
-//    }
+}
 
-   
+struct SliderItem {
+    let thumbUrl : String
+    let naverUrl : String
 }
 
 

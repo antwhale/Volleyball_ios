@@ -218,6 +218,37 @@ class HomeViewController: UIViewController {
         return view
     }()
     
+    let teamMediaLabel : UILabel = {
+        let label = UILabel()
+        label.text = "구단 영상"
+        label.textColor = .black
+        label.font = UIFont.boldSystemFont(ofSize: 18)
+        
+        return label
+    }()
+    
+    lazy var mediaCollectionViewFlowLayout: UICollectionViewFlowLayout = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.minimumInteritemSpacing = 8.0
+        layout.itemSize = CGSize(width: self.scrollContentView.frame.width, height: self.scrollContentView.frame.height)
+        return layout
+    }()
+    
+    lazy var mediaCollectionView : UICollectionView = {
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: self.mediaCollectionViewFlowLayout)
+        collectionView.isScrollEnabled = true
+        collectionView.isPagingEnabled = true
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.backgroundColor = .black
+        collectionView.clipsToBounds = true
+    
+        collectionView.register(NaverMediaCollectionViewCell.self, forCellWithReuseIdentifier: NaverMediaCollectionViewCell.id)
+        
+        return collectionView
+    }()
+    
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -228,7 +259,8 @@ class HomeViewController: UIViewController {
         setupView()
         initSubscribe()
         
-        let singleTap = UITapGestureRecognizer(target: self, action: #selector(openNewsUrl))
+        getInstaInfo()
+        
         
 //        self.view.isUserInteractionEnabled = true
 //        self.view.addGestureRecognizer(singleTap)
@@ -242,7 +274,6 @@ class HomeViewController: UIViewController {
 //        self.scrollContentView.isUserInteractionEnabled = true
 //
 //        self.testBtn.addTarget(self, action: #selector(clickTest), for: .touchUpInside)
-        
     }
     
     private func setupView() {
@@ -390,8 +421,13 @@ class HomeViewController: UIViewController {
         divider2.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor).isActive = true
         divider2.topAnchor.constraint(equalTo: instaCollectionView.bottomAnchor, constant: 10).isActive = true
         divider2.heightAnchor.constraint(equalToConstant: 15).isActive = true
-        divider2.bottomAnchor.constraint(equalTo: scrollContentView.bottomAnchor).isActive = true
+//        divider2.bottomAnchor.constraint(equalTo: scrollContentView.bottomAnchor).isActive = true
         
+        scrollContentView.addSubview(teamMediaLabel)
+        teamMediaLabel.translatesAutoresizingMaskIntoConstraints = false
+        teamMediaLabel.leadingAnchor.constraint(equalTo: scrollContentView.leadingAnchor, constant: 10).isActive = true
+        teamMediaLabel.topAnchor.constraint(equalTo: divider2.bottomAnchor, constant: 10).isActive = true
+        teamMediaLabel.bottomAnchor.constraint(equalTo: scrollContentView.bottomAnchor).isActive = true
         
         
 //        scrollContentView.addSubview(testBtn)
@@ -523,8 +559,7 @@ class HomeViewController: UIViewController {
             
             }.disposed(by: disposeBag)
         
-        homeViewModel.getInstaInfo(team: 0)
-        //instagram://media?id=1346423547953773636_401375631
+
         instaCollectionView.rx.modelSelected(MyTeamInstaItem.self)
                     .subscribe { instaItem in
                         let instaUrlID = instaItem.linkUrl.split(separator: "p")[1].replacingOccurrences(of: "/", with: "")
@@ -534,8 +569,27 @@ class HomeViewController: UIViewController {
                         }
                     }
                     .disposed(by: disposeBag)
-           
+        
+        
+        homeViewModel.getNaverTvInfo(team: 0)
+            .subscribe(on: ConcurrentDispatchQueueScheduler(qos: .background))
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { [weak self] itemList in
+                for data in itemList {
+                    Log.debug(self!.tag, "naverUrl : \(data.naverUrl), imgUrl: \(data.thumbUrl)", "\n")
+                    
+                    
+                    
+                }
+            }).disposed(by: disposeBag)
+
     }
+    
+    private func getInstaInfo() {
+        homeViewModel.getInstaInfo(team: 0)
+    }
+    
+   
     
     @objc func openNewsUrl(sender: UITapGestureRecognizerWithUrl) {
         Log.debug(self.tag, "openNewsUrl")

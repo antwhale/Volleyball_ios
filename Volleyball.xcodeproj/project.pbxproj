@@ -38,6 +38,7 @@
 		F8695AF92AC9BDA800DAEC13 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8695AF82AC9BDA800DAEC13 /* HomeCoordinator.swift */; };
 		F8695AFB2AC9C1F600DAEC13 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F8695AFA2AC9C1F600DAEC13 /* GoogleService-Info.plist */; };
 		F86E40BE2ABEC44C00827612 /* XmlNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86E40BD2ABEC44C00827612 /* XmlNewsCell.swift */; };
+		F89AC60F2AD8547300A1BB0E /* NaverMediaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89AC60E2AD8547300A1BB0E /* NaverMediaCollectionViewCell.swift */; };
 		F8B3DFAE2AB6D469006F0468 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B3DFAD2AB6D469006F0468 /* HomeViewController.swift */; };
 		F8B3DFB02AB6D498006F0468 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B3DFAF2AB6D498006F0468 /* HomeViewModel.swift */; };
 		F8B3DFB22AB6D4D8006F0468 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B3DFB12AB6D4D8006F0468 /* ScheduleViewController.swift */; };
@@ -111,6 +112,7 @@
 		F8695AF82AC9BDA800DAEC13 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		F8695AFA2AC9C1F600DAEC13 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F86E40BD2ABEC44C00827612 /* XmlNewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XmlNewsCell.swift; sourceTree = "<group>"; };
+		F89AC60E2AD8547300A1BB0E /* NaverMediaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverMediaCollectionViewCell.swift; sourceTree = "<group>"; };
 		F8B3DFAD2AB6D469006F0468 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F8B3DFAF2AB6D498006F0468 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		F8B3DFB12AB6D4D8006F0468 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 			children = (
 				F86E40BD2ABEC44C00827612 /* XmlNewsCell.swift */,
 				F8BEA65E2AD2A88E00F4174B /* InstaCollectionViewCell.swift */,
+				F89AC60E2AD8547300A1BB0E /* NaverMediaCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -580,6 +583,7 @@
 				F8383C222AB5B5DE002A849C /* OSLog.swift in Sources */,
 				F8B3DFB62AB6D544006F0468 /* TeamRankViewController.swift in Sources */,
 				F8E4C7402ABF120800579CB6 /* NewsCoordinator.swift in Sources */,
+				F89AC60F2AD8547300A1BB0E /* NaverMediaCollectionViewCell.swift in Sources */,
 				F8B3DFB22AB6D4D8006F0468 /* ScheduleViewController.swift in Sources */,
 				F85526872AC6E72900CA17BC /* TeamRankCoordinator.swift in Sources */,
 				F80D39A42AACD97F00206DB7 /* TabBarPage.swift in Sources */,

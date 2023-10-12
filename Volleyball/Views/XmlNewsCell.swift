@@ -59,8 +59,12 @@ class XmlNewsCell : UITableViewCell {
         newsTitleLabel.text = newsTitle
     }
     
-    func setThumbnail(imgUrl: URL) {
-        newsThumbImageView.loadImageUrl(url: imgUrl)
+    func setThumbnail(imgUrl: URL?) {
+        if let imgUrl = imgUrl {
+            newsThumbImageView.loadImageUrl(url: imgUrl)
+        } else {
+            newsThumbImageView.image = UIImage(named: "movieclapper")
+        }
     }
     
 }

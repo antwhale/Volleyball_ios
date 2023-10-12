@@ -55,8 +55,15 @@ class NewsViewController: UIViewController {
         newsViewModel.newsItemsSubject.subscribe(on: MainScheduler.instance)
             .bind(to: tableView.rx.items) {(tableView: UITableView, index: Int, element: XmlNewsData) -> UITableViewCell in
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: XmlNewsCell.reuseIdentifier) as? XmlNewsCell else {fatalError()}
+                print("hihi, element: \(element.title) and \(element.imgUrl)")
                 cell.setTitle(newsTitle: element.title)
-                cell.setThumbnail(imgUrl: URL(string: element.imgUrl)!)
+                
+                if(element.imgUrl.isEmpty) {
+                    cell.setThumbnail(imgUrl: nil)
+                } else {
+                    cell.setThumbnail(imgUrl: URL(string: element.imgUrl)!)
+                }
+                
                 return cell
             }.disposed(by: disposeBag)
         
