@@ -11,19 +11,20 @@ import RxSwift
 import RxCocoa
 
 class HomeViewController: UIViewController {
-    let tag = "HomeViewController"
+    static let tag = "HomeViewController"
     private var homeViewModel = HomeViewModel()
-    
+    var clickSettingIcon : (() -> Void)?
+
     let scrollView : UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.showsVerticalScrollIndicator = false
-        scrollView.backgroundColor = .systemRed
+//        scrollView.backgroundColor = .systemRed
         return scrollView
     }()
     
     let scrollContentView: UIView = {
         let view = UIView()
-        view.backgroundColor = .systemCyan
+//        view.backgroundColor = .systemCyan
         return view
     }()
     
@@ -230,23 +231,49 @@ class HomeViewController: UIViewController {
     lazy var mediaCollectionViewFlowLayout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.minimumInteritemSpacing = 8.0
-        layout.itemSize = CGSize(width: self.scrollContentView.frame.width, height: self.scrollContentView.frame.height)
+        layout.minimumLineSpacing = 0
+        layout.itemSize = CGSize(width: view.frame.size.width - 20, height: 150)
         return layout
     }()
     
     lazy var mediaCollectionView : UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: self.mediaCollectionViewFlowLayout)
         collectionView.isScrollEnabled = true
-        collectionView.isPagingEnabled = true
+        collectionView.isPagingEnabled = false
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.showsVerticalScrollIndicator = false
+        collectionView.contentInset = .init(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
         collectionView.backgroundColor = .black
         collectionView.clipsToBounds = true
-    
+
         collectionView.register(NaverMediaCollectionViewCell.self, forCellWithReuseIdentifier: NaverMediaCollectionViewCell.id)
-        
+
         return collectionView
+    }()
+    
+    let mediaPageControl : UIPageControl = {
+        let pageControl = UIPageControl()
+        pageControl.numberOfPages = 5
+        pageControl.currentPage = 0
+        pageControl.pageIndicatorTintColor = .systemGray5
+        pageControl.currentPageIndicatorTintColor = UIColor(named: "v9v9_color")
+        
+        return pageControl
+    }()
+    
+    let divider3 : UIView = {
+        let view = UIView()
+        view.backgroundColor = .systemGray5
+        return view
+    }()
+    
+    let cafeImageView : UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "cafe_banner")
+        imageView.isUserInteractionEnabled = true
+        imageView.contentMode = .scaleAspectFit
+        imageView.backgroundColor = UIColor(named: "v9v9_color")
+        return imageView
     }()
     
     let disposeBag = DisposeBag()
@@ -256,27 +283,15 @@ class HomeViewController: UIViewController {
         
         view.backgroundColor = .white
         
-        setupView()
+        setupLayout()
+        initViews()
+        
         initSubscribe()
         
         getInstaInfo()
-        
-        
-//        self.view.isUserInteractionEnabled = true
-//        self.view.addGestureRecognizer(singleTap)
-     
-//        self.scrollView.isUserInteractionEnabled = true
-//        self.scrollView.addGestureRecognizer(singleTap)
-        
-//        self.newsImageView.isUserInteractionEnabled = true
-//        self.newsImageView.addGestureRecognizer(singleTap)
-//
-//        self.scrollContentView.isUserInteractionEnabled = true
-//
-//        self.testBtn.addTarget(self, action: #selector(clickTest), for: .touchUpInside)
     }
     
-    private func setupView() {
+    private func setupLayout() {
         view.addSubview(scrollView)
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
@@ -296,7 +311,7 @@ class HomeViewController: UIViewController {
         todayMatchLabel.translatesAutoresizingMaskIntoConstraints = false
         todayMatchLabel.leadingAnchor.constraint(equalTo: scrollContentView.leadingAnchor, constant: 10).isActive = true
         todayMatchLabel.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor).isActive = true
-        todayMatchLabel.topAnchor.constraint(equalTo: scrollContentView.topAnchor).isActive = true
+        todayMatchLabel.topAnchor.constraint(equalTo: scrollContentView.topAnchor, constant: 10).isActive = true
         
         scrollContentView.addSubview(manMatchDateLabel1)
         manMatchDateLabel1.translatesAutoresizingMaskIntoConstraints = false
@@ -388,7 +403,6 @@ class HomeViewController: UIViewController {
         newsTitleLabel4.leadingAnchor.constraint(equalTo: newsTitleLabel3.leadingAnchor).isActive = true
         newsTitleLabel4.trailingAnchor.constraint(equalTo: newsTitleLabel3.trailingAnchor).isActive = true
         newsTitleLabel4.topAnchor.constraint(equalTo: newsTitleLabel3.bottomAnchor, constant: 15).isActive = true
-        newsTitleLabel4.backgroundColor = .systemPink
         
         scrollContentView.addSubview(kovoMarketImageView)
         kovoMarketImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -421,33 +435,73 @@ class HomeViewController: UIViewController {
         divider2.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor).isActive = true
         divider2.topAnchor.constraint(equalTo: instaCollectionView.bottomAnchor, constant: 10).isActive = true
         divider2.heightAnchor.constraint(equalToConstant: 15).isActive = true
-//        divider2.bottomAnchor.constraint(equalTo: scrollContentView.bottomAnchor).isActive = true
         
         scrollContentView.addSubview(teamMediaLabel)
         teamMediaLabel.translatesAutoresizingMaskIntoConstraints = false
         teamMediaLabel.leadingAnchor.constraint(equalTo: scrollContentView.leadingAnchor, constant: 10).isActive = true
         teamMediaLabel.topAnchor.constraint(equalTo: divider2.bottomAnchor, constant: 10).isActive = true
-        teamMediaLabel.bottomAnchor.constraint(equalTo: scrollContentView.bottomAnchor).isActive = true
         
+        scrollContentView.addSubview(mediaCollectionView)
+        mediaCollectionView.translatesAutoresizingMaskIntoConstraints = false
+        mediaCollectionView.leadingAnchor.constraint(equalTo: teamMediaLabel.leadingAnchor).isActive = true
+        mediaCollectionView.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor, constant: -10).isActive = true
+        mediaCollectionView.topAnchor.constraint(equalTo: teamMediaLabel.bottomAnchor, constant: 10).isActive = true
+        mediaCollectionView.heightAnchor.constraint(equalToConstant: 150).isActive = true
         
-//        scrollContentView.addSubview(testBtn)
-//        testBtn.translatesAutoresizingMaskIntoConstraints = false
-//        testBtn.leadingAnchor.constraint(equalTo: kovoMarketImageView.leadingAnchor).isActive = true
-//        testBtn.trailingAnchor.constraint(equalTo: kovoMarketImageView.trailingAnchor).isActive = true
-//        testBtn.topAnchor.constraint(equalTo: instaCollectionView.bottomAnchor, constant: 10).isActive = true
-//        testBtn.bottomAnchor.constraint(equalTo: scrollContentView.bottomAnchor).isActive = true
+        scrollContentView.addSubview(mediaPageControl)
+        mediaPageControl.translatesAutoresizingMaskIntoConstraints = false
+        mediaPageControl.centerXAnchor.constraint(equalTo: scrollContentView.centerXAnchor).isActive = true
+        mediaPageControl.topAnchor.constraint(equalTo: mediaCollectionView.bottomAnchor, constant: 5).isActive = true
+        
+        scrollContentView.addSubview(divider3)
+        divider3.translatesAutoresizingMaskIntoConstraints = false
+        divider3.leadingAnchor.constraint(equalTo: scrollContentView.leadingAnchor).isActive = true
+        divider3.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor).isActive = true
+        divider3.topAnchor.constraint(equalTo: mediaPageControl.bottomAnchor, constant: 10).isActive = true
+        divider3.heightAnchor.constraint(equalToConstant: 15).isActive = true
+        
+        scrollContentView.addSubview(cafeImageView)
+        cafeImageView.translatesAutoresizingMaskIntoConstraints = false
+        cafeImageView.leadingAnchor.constraint(equalTo: scrollContentView.leadingAnchor).isActive = true
+        cafeImageView.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor).isActive = true
+        cafeImageView.topAnchor.constraint(equalTo: divider3.bottomAnchor).isActive = true
+        cafeImageView.bottomAnchor.constraint(equalTo: scrollContentView.bottomAnchor).isActive = true
+        
+        let cafeBannerTap = UITapGestureRecognizerWithUrl(target: self, action: #selector(self.openNewsUrl(sender:)))
+        cafeBannerTap.url = "https://cafe.naver.com/v9v9"
+        cafeImageView.addGestureRecognizer(cafeBannerTap)
         
     }
     
+    private func initViews() {
+        Log.debug(HomeViewController.tag, "initViews")
+        
+        let mainAppearance = UINavigationBarAppearance()
+        mainAppearance.backgroundColor = UIColor(named: "v9v9_color")
+        self.navigationController?.navigationBar.scrollEdgeAppearance = mainAppearance
+        self.navigationController?.navigationBar.standardAppearance = mainAppearance
+        self.navigationItem.title = "배구배구"
+        self.navigationController?.navigationBar.scrollEdgeAppearance?.titleTextAttributes = [.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.standardAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gearshape"), style: .plain, target: self, action: #selector(clickSetting))
+    }
+    
+    @objc
+    private func clickSetting() {
+        Log.debug(PlayerRankViewController.tag, "clickSetting")
+        self.clickSettingIcon?()
+    }
+    
     private func initSubscribe() {
-        Log.debug(tag, "initSubscribe")
+        Log.debug(HomeViewController.tag, "initSubscribe")
         
         let nowDate = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM월 dd일 (E)"
         let dateString = dateFormatter.string(from: nowDate)
         
-        Log.debug(tag, "dateString: \(dateString)")
+        Log.debug(HomeViewController.tag, "dateString: \(dateString)")
         
         homeViewModel.getTodayScheduleInfo(gender: "M", dateStr: dateString).observeSingleEvent(of: .value, with: {
             snapshot in
@@ -458,7 +512,7 @@ class HomeViewController: UIViewController {
             let hometeam = value?["home_team"] as? String ?? ""
             let awayteam = value?["away_team"] as? String ?? ""
             
-            Log.debug(self.tag, "ManSchedule, time: \(time), place: \(place), hometeam: \(hometeam), awayteam: \(awayteam)")
+            Log.debug(HomeViewController.tag, "ManSchedule, time: \(time), place: \(place), hometeam: \(hometeam), awayteam: \(awayteam)")
 
             if value == nil {
                 self.manMatchDateLabel1.text = "남자부 경기 없음"
@@ -483,7 +537,7 @@ class HomeViewController: UIViewController {
             let hometeam = value?["home_team"] as? String ?? ""
             let awayteam = value?["away_team"] as? String ?? ""
             
-            Log.debug(self.tag, "WomanSchedule, time: \(time), place: \(place), hometeam: \(hometeam), awayteam: \(awayteam)")
+            Log.debug(HomeViewController.tag, "WomanSchedule, time: \(time), place: \(place), hometeam: \(hometeam), awayteam: \(awayteam)")
             
             if value == nil {
                 self.womanMatchDateLabel1.text = "여자부 경기 없음"
@@ -504,13 +558,12 @@ class HomeViewController: UIViewController {
             .subscribe(on: ConcurrentDispatchQueueScheduler(qos: .background))
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { [weak self] newsList in
-                Log.debug(self?.tag, "newsList: \(newsList)")
+                Log.debug(HomeViewController.tag, "newsList: \(newsList)")
                 
                 //뉴스 이미지와 타이틀 바인딩
                 guard let thumbUrl = URL(string: newsList[0].thumbUrl) else { return }
                 self?.newsImageView.loadImageUrl(url: thumbUrl)
                 self?.newsTitleLabel1.text = newsList[0].title
-                
                 self?.newsTitleLabel2.text = newsList[1].title
                 self?.newsTitleLabel3.text = newsList[2].title
                 self?.newsTitleLabel4.text = newsList[3].title
@@ -535,53 +588,59 @@ class HomeViewController: UIViewController {
                 
             }).disposed(by: disposeBag)
         
-        homeViewModel.instaItemSubject.subscribe(onNext: { [weak self] instaArray in
+        homeViewModel.instaItemSubject.subscribe(onNext: { instaArray in
             for item in instaArray {
-                Log.debug(self!.tag, "bjs link: \(item.linkUrl), img: \(item.thumbUrl)")
+                Log.debug(HomeViewController.tag, "instaItem link: \(item.linkUrl), img: \(item.thumbUrl)")
             }
         }).disposed(by: disposeBag)
         
         homeViewModel.instaItemSubject.asObservable()
-            .do(onNext: { item in
-//                print("onNext start, thumbUrl: \(item.thumbUrl), linkUrl: \(item.linkUrl)")
-                print("onNext start")
-            })
-                .do(onSubscribe: {
-                    print("onSubscribe start")
-                })
             .bind(to: self.instaCollectionView.rx.items(cellIdentifier: "InstaCollectionViewCell", cellType: InstaCollectionViewCell.self)){ index, item, cell in
-                print("야호")
-                print("item.thumbUrl: \(item.thumbUrl), item.linkUrl: \(item.linkUrl)")
+                
+                Log.debug(HomeViewController.tag, "item.thumbUrl: \(item.thumbUrl), item.linkUrl: \(item.linkUrl)")
                 
                 guard let instaThumbUrl = URL(string: item.thumbUrl) else { return }
                 cell.setThumbImage(imgUrl: instaThumbUrl)
                 cell.setInstaLink(link: item.linkUrl)
-            
+                
             }.disposed(by: disposeBag)
         
 
         instaCollectionView.rx.modelSelected(MyTeamInstaItem.self)
                     .subscribe { instaItem in
-                        let instaUrlID = instaItem.linkUrl.split(separator: "p")[1].replacingOccurrences(of: "/", with: "")
+                        let instaUrlID = instaItem.linkUrl.split(separator: "p/")[1].replacingOccurrences(of: "/", with: "")
                         
-                        if let url = URL(string: "instagram://media?id=\(instaUrlID)") {
+                        Log.debug(HomeViewController.tag, "instaUrlID: \(instaUrlID)")
+                        
+                        if let url = URL(string: instaItem.linkUrl) {
                             UIApplication.shared.open(url, options: [:])
                         }
-                    }
-                    .disposed(by: disposeBag)
-        
+                    }.disposed(by: disposeBag)
         
         homeViewModel.getNaverTvInfo(team: 0)
-            .subscribe(on: ConcurrentDispatchQueueScheduler(qos: .background))
-            .observe(on: MainScheduler.instance)
-            .subscribe(onNext: { [weak self] itemList in
-                for data in itemList {
-                    Log.debug(self!.tag, "naverUrl : \(data.naverUrl), imgUrl: \(data.thumbUrl)", "\n")
-                    
-                    
-                    
+            .do(onNext: {item in
+                print("sos onNext")
+                for data in item {
+                    Log.debug("sos", "naverUrl : \(data.naverUrl), imgUrl: \(data.thumbUrl)", "\n")
                 }
-            }).disposed(by: disposeBag)
+            })
+                .do(onSubscribe: {
+                    print("sos onSubscribe")
+                })
+            .subscribe(on: ConcurrentDispatchQueueScheduler(qos: .background))
+            .bind(to: self.mediaCollectionView.rx.items(cellIdentifier: NaverMediaCollectionViewCell.id, cellType: NaverMediaCollectionViewCell.self)){ [weak self] index, item, cell in
+                guard let naverTvThumbUrl = URL(string: item.thumbUrl) else {return}
+                cell.setThumbImage(imgUrl: naverTvThumbUrl)
+                cell.setNaverLink(link: "https://tv.naver.com" + item.naverUrl)
+                
+                let cellTap = UITapGestureRecognizerWithUrl(target: self, action: #selector(self?.openNewsUrl(sender:)))
+                cellTap.url = "https://tv.naver.com" + item.naverUrl
+                cell.addGestureRecognizer(cellTap)
+                
+            }.disposed(by: disposeBag)
+        
+        self.mediaCollectionView.rx.setDelegate(self)
+                    .disposed(by: disposeBag)
 
     }
     
@@ -592,7 +651,7 @@ class HomeViewController: UIViewController {
    
     
     @objc func openNewsUrl(sender: UITapGestureRecognizerWithUrl) {
-        Log.debug(self.tag, "openNewsUrl")
+        Log.debug(HomeViewController.tag, "openNewsUrl")
         if let url = URL(string: sender.url) {
             UIApplication.shared.open(url, options: [:])
         }
@@ -607,3 +666,41 @@ class UITapGestureRecognizerWithUrl : UITapGestureRecognizer {
     var url: String = ""
 }
 
+extension HomeViewController : UIScrollViewDelegate {
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        guard let layout = self.mediaCollectionView.collectionViewLayout as? UICollectionViewFlowLayout else { return }
+                // CollectionView Item Size
+                let cellWidthIncludingSpacing = layout.itemSize.width + layout.minimumLineSpacing
+               
+                // 이동한 x좌표 값과 item의 크기를 비교 후 페이징 값 설정
+                let estimatedIndex = scrollView.contentOffset.x / cellWidthIncludingSpacing
+                let index: Int
+               
+                // 스크롤 방향 체크
+                // item 절반 사이즈 만큼 스크롤로 판단하여 올림, 내림 처리
+                if velocity.x > 0 {
+                   index = Int(ceil(estimatedIndex))
+                } else if velocity.x < 0 {
+                    index = Int(floor(estimatedIndex))
+                } else {
+                    index = Int(round(estimatedIndex))
+                }
+        
+                Log.debug(HomeViewController.tag, "scrollViewWillEndDragging, index: \(index)")
+        
+                if index <= 0 {
+                    self.mediaPageControl.currentPage = 0
+                } else if index == 1 {
+                    self.mediaPageControl.currentPage = index
+                } else if index == 2 {
+                    self.mediaPageControl.currentPage = index
+                } else if index == 3 {
+                    self.mediaPageControl.currentPage = index
+                } else {
+                    self.mediaPageControl.currentPage = 4
+                }
+        
+               // 위 코드를 통해 페이징 될 좌표 값을 targetContentOffset에 대입
+               targetContentOffset.pointee = CGPoint(x: CGFloat(index) * cellWidthIncludingSpacing, y: 0)
+    }
+}

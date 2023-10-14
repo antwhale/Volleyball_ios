@@ -34,10 +34,31 @@ class NewsCoordinator : NewsCoordinatorProtocol {
                 UIApplication.shared.open(url, options: [:])
             }
         }
+        newsViewController.clickSettingIcon = {
+            self.goToSettingViewController()
+        }
         navigationController.setViewControllers([newsViewController], animated: false)
     }
     
     func showNewsDetailController() {
         Log.debug(tag, "showNewsDetailController")
+    }
+    
+    func goToSettingViewController() {
+        Log.debug(PlayerRankCoordinator.tag, "goToSettingViewController")
+        
+        let settingCoordinator = SettingCoordinator(navigationController)
+        settingCoordinator.finishDelegate = self
+        childCoordinators.append(settingCoordinator)
+        settingCoordinator.start()
+    }
+}
+
+extension NewsCoordinator : CoordinatorFinishDelegate {
+    func coordinatorDidFinish(childCoordinator: Coordinator) {
+        Log.debug(PlayerRankCoordinator.tag, "coordinatorDidFinish")
+        
+        childCoordinators = childCoordinators.filter ({ $0.type != childCoordinator.type})
+        
     }
 }

@@ -30,7 +30,7 @@ class IntroCoordinator : IntroCoordinatorProtocol {
     }
     
     deinit {
-        print("IntroCoordinatorProtocol deinit")
+        print("IntroCoordinator deinit")
     }
     
     func showIntroViewController() {

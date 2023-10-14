@@ -11,14 +11,30 @@ import WebKit
 
 
 class TeamRankViewController: UIViewController {
+    static let tag = "TeamRankViewController"
+    var clickSettingIcon : (() -> Void)?
+
     private var webView: WKWebView!
     
     override func viewDidLoad(){
         super.viewDidLoad()
         
-        view.backgroundColor = .brown
-        
+        initViews()
         initWebView()
+    }
+    
+    private func initViews() {
+        Log.debug(TeamRankViewController.tag, "initViews")
+        
+        let mainAppearance = UINavigationBarAppearance()
+        mainAppearance.backgroundColor = UIColor(named: "v9v9_color")
+        self.navigationController?.navigationBar.scrollEdgeAppearance = mainAppearance
+        self.navigationController?.navigationBar.standardAppearance = mainAppearance
+        self.navigationItem.title = "배구배구"
+        self.navigationController?.navigationBar.scrollEdgeAppearance?.titleTextAttributes = [.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.standardAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gearshape"), style: .plain, target: self, action: #selector(clickSetting))
     }
     
     private func initWebView() {
@@ -45,6 +61,12 @@ class TeamRankViewController: UIViewController {
         let teamRankUrl = URL(string: "https://kovo.co.kr/KOVO/stats/team-record")
         let teamRankRequest = URLRequest(url: teamRankUrl!)
         webView.load(teamRankRequest)
+    }
+    
+    @objc
+    private func clickSetting() {
+        Log.debug(TeamRankViewController.tag, "clickSetting")
+        self.clickSettingIcon?()
     }
 }
 

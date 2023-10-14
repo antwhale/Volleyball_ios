@@ -9,9 +9,12 @@ import Foundation
 import UIKit
 
 protocol PlayerRankCoordinatorProtocol : Coordinator {
+    func goToSettingViewController()
 }
 
 class PlayerRankCoordinator : PlayerRankCoordinatorProtocol {
+    static let tag = "PlayerRankCoordinator"
+    
     var finishDelegate: CoordinatorFinishDelegate?
     
     var navigationController: UINavigationController
@@ -22,6 +25,9 @@ class PlayerRankCoordinator : PlayerRankCoordinatorProtocol {
     
     func start() {
         let playerRankViewController = PlayerRankViewController()
+        playerRankViewController.clickSettingIcon = {
+            self.goToSettingViewController()
+        }
         navigationController.setViewControllers([playerRankViewController], animated: false)
     }
     
@@ -29,5 +35,21 @@ class PlayerRankCoordinator : PlayerRankCoordinatorProtocol {
         self.navigationController = navigationController
     }
     
-    
+    func goToSettingViewController() {
+        Log.debug(PlayerRankCoordinator.tag, "goToSettingViewController")
+        
+        let settingCoordinator = SettingCoordinator(navigationController)
+        settingCoordinator.finishDelegate = self
+        childCoordinators.append(settingCoordinator)
+        settingCoordinator.start()
+    }
+}
+
+extension PlayerRankCoordinator : CoordinatorFinishDelegate {
+    func coordinatorDidFinish(childCoordinator: Coordinator) {
+        Log.debug(PlayerRankCoordinator.tag, "coordinatorDidFinish")
+        
+        childCoordinators = childCoordinators.filter ({ $0.type != childCoordinator.type})
+
+    }
 }

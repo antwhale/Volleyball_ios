@@ -12,8 +12,10 @@ import RxCocoa
 
 
 class NewsViewController: UIViewController {
-    let tag = "NewsViewController"
+    static let tag = "NewsViewController"
     
+    var clickSettingIcon : (() -> Void)?
+
     private var newsViewModel = NewsViewModel()
     private let tableView : UITableView = {
        let tableView = UITableView()
@@ -29,15 +31,37 @@ class NewsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Log.debug(tag, "viewDidLoad")
+        Log.debug(NewsViewController.tag, "viewDidLoad")
         view.backgroundColor = .darkGray
         
         setupLayout()
+        initViews()
         subscribeInit()
     }
     
+    private func initViews() {
+        Log.debug(NewsViewController.tag, "initViews")
+        
+        let mainAppearance = UINavigationBarAppearance()
+        mainAppearance.backgroundColor = UIColor(named: "v9v9_color")
+        self.navigationController?.navigationBar.scrollEdgeAppearance = mainAppearance
+        self.navigationController?.navigationBar.standardAppearance = mainAppearance
+        self.navigationItem.title = "배구배구"
+        self.navigationController?.navigationBar.scrollEdgeAppearance?.titleTextAttributes = [.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.standardAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gearshape"), style: .plain, target: self, action: #selector(clickSetting))
+    }
+    
+    @objc
+    private func clickSetting() {
+        Log.debug(PlayerRankViewController.tag, "clickSetting")
+        self.clickSettingIcon?()
+    }
+    
     private func setupLayout() {
-        Log.debug(tag, "setupLayout")
+        Log.debug(NewsViewController.tag, "setupLayout")
         
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -50,7 +74,7 @@ class NewsViewController: UIViewController {
     }
     
     private func subscribeInit() {
-        Log.debug(tag, "subscribeInit")
+        Log.debug(NewsViewController.tag, "subscribeInit")
         
         newsViewModel.newsItemsSubject.subscribe(on: MainScheduler.instance)
             .bind(to: tableView.rx.items) {(tableView: UITableView, index: Int, element: XmlNewsData) -> UITableViewCell in
@@ -70,7 +94,7 @@ class NewsViewController: UIViewController {
         tableView.rx.modelSelected(XmlNewsData.self)
             .subscribe(on: MainScheduler.instance)
             .subscribe(onNext: {[weak self] element in
-                Log.debug(self!.tag, "click \(element) item")
+                Log.debug(NewsViewController.tag, "click \(element) item")
                 
                 self?.openNewsClosure?(element.link)
                 
@@ -78,21 +102,21 @@ class NewsViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        Log.debug(tag, "viewWillAppear")
+        Log.debug(NewsViewController.tag, "viewWillAppear")
         
         newsViewModel.fetchNewsItems()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        Log.debug(tag, "viewWillDisappear")
+        Log.debug(NewsViewController.tag, "viewWillDisappear")
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        Log.debug(tag, "viewDidDisappear")
+        Log.debug(NewsViewController.tag, "viewDidDisappear")
     }
     
     deinit {
-        Log.debug(tag, "NewsViewController deinit")
+        Log.debug(NewsViewController.tag, "NewsViewController deinit")
     }
 }
 

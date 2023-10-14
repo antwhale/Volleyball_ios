@@ -16,9 +16,12 @@ protocol MainCoordinatorProtocol : Coordinator {
     func setSelectedIndex(_ index : Int)
     
     func currentPage() -> MainTabBarPage?
+    
 }
 
 class MainCoordinator : NSObject, MainCoordinatorProtocol {
+    static let tag = "MainCoordinator"
+    
     weak var finishDelegate: CoordinatorFinishDelegate?
     
     var childCoordinators: [Coordinator] = []
@@ -80,8 +83,7 @@ class MainCoordinator : NSObject, MainCoordinatorProtocol {
         case .home:
             Log.debug("getTabController - main")
             //If needed: Each tab bar flow can have its own Coordinator
-//            let homeVC = HomeViewController()
-//            navController.pushViewController(homeVC, animated: true)
+
             let homeCoordinator = HomeCoordinator(navController)
             homeCoordinator.start()
             childCoordinators.append(homeCoordinator)
@@ -89,13 +91,16 @@ class MainCoordinator : NSObject, MainCoordinatorProtocol {
             
         case .schedule:
             Log.debug("getTabController - sehedule")
-            let scheduleVC = ScheduleViewController()
-            navController.pushViewController(scheduleVC, animated: true)
+//            let scheduleVC = ScheduleViewController()
+//            navController.pushViewController(scheduleVC, animated: true)
+            let scheduleCoordinator = ScheduleCoordinator(navController)
+            scheduleCoordinator.start()
+            childCoordinators.append(scheduleCoordinator)
+            return scheduleCoordinator.navigationController
             
         case .news:
             Log.debug("getTabController - news")
-//            let newsVC = NewsViewController()
-//            navController.pushViewController(newsVC, animated: true)
+
             let newsCoordinator = NewsCoordinator(navController)
             newsCoordinator.start()
             childCoordinators.append(newsCoordinator)
@@ -103,8 +108,7 @@ class MainCoordinator : NSObject, MainCoordinatorProtocol {
 
         case .team_rank:
             Log.debug("getTabController - team_rank")
-//            let teamRankVC = TeamRankViewController()
-//            navController.pushViewController(teamRankVC, animated: true)
+
             let teamRankCoordinator = TeamRankCoordinator(navController)
             teamRankCoordinator.start()
             childCoordinators.append(teamRankCoordinator)
@@ -112,8 +116,7 @@ class MainCoordinator : NSObject, MainCoordinatorProtocol {
 
         case .player_rank:
             Log.debug("getTabController - player_rank")
-//            let playerRankVC = PlayerRankViewController()
-//            navController.pushViewController(playerRankVC, animated: true)
+            
             let playerRankCoordinator = PlayerRankCoordinator(navController)
             playerRankCoordinator.start()
             childCoordinators.append(playerRankCoordinator)
@@ -135,6 +138,7 @@ class MainCoordinator : NSObject, MainCoordinatorProtocol {
         guard let page = MainTabBarPage.init(index: index) else {return}
         tabBarController.selectedIndex = page.pageOrderNumber()
     }
+    
 }
 
 //MARK : UITabBarControllerDelegate
@@ -144,6 +148,6 @@ extension MainCoordinator : UITabBarControllerDelegate {
         Log.debug("tabBarController called")
         childCoordinators.removeAll()
         
-//        childCoordinators.append(<#T##newElement: Coordinator##Coordinator#>)
     }
 }
+

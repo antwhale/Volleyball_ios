@@ -10,15 +10,37 @@ import UIKit
 import WebKit
 
 class ScheduleViewController: UIViewController {
+    static let tag = "ScheduleViewController"
+    var clickSettingIcon : (() -> Void)?
+
     private var webView: WKWebView!
     private let baseScheduleUrl = "https://m.sports.naver.com/volleyball/schedule/index?date="
     
     override func viewDidLoad(){
         super.viewDidLoad()
         
-        view.backgroundColor = .systemCyan
         
+        initViews()
         initWebView()
+    }
+    
+    private func initViews() {
+        Log.debug(ScheduleViewController.tag, "initViews")
+        
+        let mainAppearance = UINavigationBarAppearance()
+        mainAppearance.backgroundColor = UIColor(named: "v9v9_color")
+        self.navigationController?.navigationBar.scrollEdgeAppearance = mainAppearance
+        self.navigationController?.navigationBar.standardAppearance = mainAppearance
+        self.navigationItem.title = "배구배구"
+        self.navigationController?.navigationBar.scrollEdgeAppearance?.titleTextAttributes = [.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.standardAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gearshape"), style: .plain, target: self, action: #selector(clickSetting))
+    }
+    
+    @objc
+    private func clickSetting() {
+        Log.debug(PlayerRankViewController.tag, "clickSetting")
+        self.clickSettingIcon?()
     }
     
     private func initWebView() {

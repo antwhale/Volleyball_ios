@@ -10,14 +10,38 @@ import UIKit
 import WebKit
 
 class PlayerRankViewController: UIViewController {
+    static let tag = "PlayerRankViewController"
+    
     private var webView: WKWebView!
+    var clickSettingIcon : (() -> Void)?
 
     override func viewDidLoad(){
         super.viewDidLoad()
         
-        view.backgroundColor = .black
-        
+        initViews()
         initWebView()
+    }
+    
+    private func initViews() {
+        Log.debug(PlayerRankViewController.tag, "initViews")
+        
+        let mainAppearance = UINavigationBarAppearance()
+        mainAppearance.backgroundColor = UIColor(named: "v9v9_color")
+        self.navigationController?.navigationBar.scrollEdgeAppearance = mainAppearance
+        self.navigationController?.navigationBar.standardAppearance = mainAppearance
+        self.navigationItem.title = "배구배구"
+        self.navigationController?.navigationBar.scrollEdgeAppearance?.titleTextAttributes = [.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.standardAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gearshape"), style: .plain, target: self, action: #selector(clickSetting))
+        
+        
+    }
+    
+    @objc
+    private func clickSetting() {
+        Log.debug(PlayerRankViewController.tag, "clickSetting")
+        self.clickSettingIcon?()
     }
     
     private func initWebView() {
@@ -46,6 +70,8 @@ class PlayerRankViewController: UIViewController {
         webView.load(playerRankRequest)
     }
 }
+
+
 
 extension PlayerRankViewController : WKScriptMessageHandler {
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {

@@ -1,32 +1,34 @@
 //
-//  HomeCoordinator.swift
+//  ScheduleCoordinator.swift
 //  Volleyball
 //
-//  Created by 부재식 on 2023/10/01.
+//  Created by 부재식 on 2023/10/15.
 //
 
 import Foundation
 import UIKit
 
-protocol HomeCoordinatorProtocol : Coordinator {
+protocol ScheduleCoordinatorProtocol : Coordinator {
     func goToSettingViewController()
 }
 
-class HomeCoordinator : HomeCoordinatorProtocol {
+class ScheduleCoordinator : ScheduleCoordinatorProtocol {
+    static let tag = "ScheduleCoordinator"
+    
     var finishDelegate: CoordinatorFinishDelegate?
     
     var navigationController: UINavigationController
     
     var childCoordinators: [Coordinator] = []
     
-    var type: CoordinatorType { .home }
+    var type: CoordinatorType { .schedule }
     
     func start() {
-        let homeViewController = HomeViewController()
-        homeViewController.clickSettingIcon = {
+        let scheduleViewController = ScheduleViewController()
+        scheduleViewController.clickSettingIcon = {
             self.goToSettingViewController()
         }
-        navigationController.setViewControllers([homeViewController], animated: false)
+        navigationController.setViewControllers([scheduleViewController], animated: false)
     }
     
     required init(_ navigationController: UINavigationController) {
@@ -34,7 +36,7 @@ class HomeCoordinator : HomeCoordinatorProtocol {
     }
     
     func goToSettingViewController() {
-        Log.debug(PlayerRankCoordinator.tag, "goToSettingViewController")
+        Log.debug(ScheduleCoordinator.tag, "goToSettingViewController")
         
         let settingCoordinator = SettingCoordinator(navigationController)
         settingCoordinator.finishDelegate = self
@@ -43,11 +45,10 @@ class HomeCoordinator : HomeCoordinatorProtocol {
     }
 }
 
-extension HomeCoordinator : CoordinatorFinishDelegate {
+extension ScheduleCoordinator : CoordinatorFinishDelegate {
     func coordinatorDidFinish(childCoordinator: Coordinator) {
-        Log.debug(PlayerRankCoordinator.tag, "coordinatorDidFinish")
+        Log.debug(ScheduleCoordinator.tag, "coordinatorDidFinish")
         
         childCoordinators = childCoordinators.filter ({ $0.type != childCoordinator.type})
-
     }
 }
