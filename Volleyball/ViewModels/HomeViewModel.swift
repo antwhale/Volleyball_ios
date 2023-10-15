@@ -124,7 +124,10 @@ class HomeViewModel {
             
             return Disposables.create {}
         }
-        
+    }
+    
+    func getCheeringTeam() -> Int {
+        return UserDefaults.standard.integer(forKey: "MyTeam")
     }
     
     

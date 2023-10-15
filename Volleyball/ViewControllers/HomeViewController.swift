@@ -276,6 +276,8 @@ class HomeViewController: UIViewController {
         return imageView
     }()
     
+    lazy var cheeringTeam : Int = homeViewModel.getCheeringTeam()
+    
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -288,7 +290,7 @@ class HomeViewController: UIViewController {
         
         initSubscribe()
         
-        getInstaInfo()
+        
     }
     
     private func setupLayout() {
@@ -553,8 +555,78 @@ class HomeViewController: UIViewController {
             }
         })
         
+//        homeViewModel.instaItemSubject.subscribe(onNext: { instaArray in
+//            for item in instaArray {
+//                Log.debug(HomeViewController.tag, "instaItem link: \(item.linkUrl), img: \(item.thumbUrl)")
+//            }
+//        }).disposed(by: disposeBag)
         
-        homeViewModel.getRecentTeamNews(team: 0)
+        homeViewModel.instaItemSubject.asObservable()
+            .bind(to: self.instaCollectionView.rx.items(cellIdentifier: "InstaCollectionViewCell", cellType: InstaCollectionViewCell.self)){ index, item, cell in
+                
+                Log.debug(HomeViewController.tag, "item.thumbUrl: \(item.thumbUrl), item.linkUrl: \(item.linkUrl)")
+                
+                guard let instaThumbUrl = URL(string: item.thumbUrl) else { return }
+                cell.setThumbImage(imgUrl: instaThumbUrl)
+                cell.setInstaLink(link: item.linkUrl)
+                
+            }.disposed(by: disposeBag)
+        
+
+        instaCollectionView.rx.modelSelected(MyTeamInstaItem.self)
+                    .subscribe { instaItem in
+                        let instaUrlID = instaItem.linkUrl.split(separator: "p/")[1].replacingOccurrences(of: "/", with: "")
+                        
+                        Log.debug(HomeViewController.tag, "instaUrlID: \(instaUrlID)")
+                        
+                        if let url = URL(string: instaItem.linkUrl) {
+                            UIApplication.shared.open(url, options: [:])
+                        }
+                    }.disposed(by: disposeBag)
+        
+        
+        
+        self.mediaCollectionView.rx.setDelegate(self)
+                    .disposed(by: disposeBag)
+
+    }
+    
+    private func getInstaInfo() {
+        homeViewModel.getInstaInfo(team: cheeringTeam)
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print("HomeViewController viewWillAppear")
+        
+        getInstaInfo()
+        
+        mediaCollectionView.dataSource = nil
+        mediaCollectionView.delegate = nil
+        
+        homeViewModel.getNaverTvInfo(team: cheeringTeam)
+            .do(onNext: {item in
+                print("sos onNext")
+                for data in item {
+                    Log.debug("sos", "naverUrl : \(data.naverUrl), imgUrl: \(data.thumbUrl)", "\n")
+                }
+            })
+                .do(onSubscribe: {
+                    print("sos onSubscribe")
+                })
+            .subscribe(on: ConcurrentDispatchQueueScheduler(qos: .background))
+            .bind(to: self.mediaCollectionView.rx.items(cellIdentifier: NaverMediaCollectionViewCell.id, cellType: NaverMediaCollectionViewCell.self)){ [weak self] index, item, cell in
+                guard let naverTvThumbUrl = URL(string: item.thumbUrl) else {return}
+                cell.setThumbImage(imgUrl: naverTvThumbUrl)
+                cell.setNaverLink(link: "https://tv.naver.com" + item.naverUrl)
+                
+                let cellTap = UITapGestureRecognizerWithUrl(target: self, action: #selector(self?.openNewsUrl(sender:)))
+                cellTap.url = "https://tv.naver.com" + item.naverUrl
+                cell.addGestureRecognizer(cellTap)
+                
+            }.disposed(by: disposeBag)
+        
+        homeViewModel.getRecentTeamNews(team: cheeringTeam)
             .subscribe(on: ConcurrentDispatchQueueScheduler(qos: .background))
             .observe(on: MainScheduler.instance)
             .subscribe(onNext: { [weak self] newsList in
@@ -587,67 +659,7 @@ class HomeViewController: UIViewController {
                 self?.newsTitleLabel4.addGestureRecognizer(fourthNewsTap)
                 
             }).disposed(by: disposeBag)
-        
-        homeViewModel.instaItemSubject.subscribe(onNext: { instaArray in
-            for item in instaArray {
-                Log.debug(HomeViewController.tag, "instaItem link: \(item.linkUrl), img: \(item.thumbUrl)")
-            }
-        }).disposed(by: disposeBag)
-        
-        homeViewModel.instaItemSubject.asObservable()
-            .bind(to: self.instaCollectionView.rx.items(cellIdentifier: "InstaCollectionViewCell", cellType: InstaCollectionViewCell.self)){ index, item, cell in
-                
-                Log.debug(HomeViewController.tag, "item.thumbUrl: \(item.thumbUrl), item.linkUrl: \(item.linkUrl)")
-                
-                guard let instaThumbUrl = URL(string: item.thumbUrl) else { return }
-                cell.setThumbImage(imgUrl: instaThumbUrl)
-                cell.setInstaLink(link: item.linkUrl)
-                
-            }.disposed(by: disposeBag)
-        
-
-        instaCollectionView.rx.modelSelected(MyTeamInstaItem.self)
-                    .subscribe { instaItem in
-                        let instaUrlID = instaItem.linkUrl.split(separator: "p/")[1].replacingOccurrences(of: "/", with: "")
-                        
-                        Log.debug(HomeViewController.tag, "instaUrlID: \(instaUrlID)")
-                        
-                        if let url = URL(string: instaItem.linkUrl) {
-                            UIApplication.shared.open(url, options: [:])
-                        }
-                    }.disposed(by: disposeBag)
-        
-        homeViewModel.getNaverTvInfo(team: 0)
-            .do(onNext: {item in
-                print("sos onNext")
-                for data in item {
-                    Log.debug("sos", "naverUrl : \(data.naverUrl), imgUrl: \(data.thumbUrl)", "\n")
-                }
-            })
-                .do(onSubscribe: {
-                    print("sos onSubscribe")
-                })
-            .subscribe(on: ConcurrentDispatchQueueScheduler(qos: .background))
-            .bind(to: self.mediaCollectionView.rx.items(cellIdentifier: NaverMediaCollectionViewCell.id, cellType: NaverMediaCollectionViewCell.self)){ [weak self] index, item, cell in
-                guard let naverTvThumbUrl = URL(string: item.thumbUrl) else {return}
-                cell.setThumbImage(imgUrl: naverTvThumbUrl)
-                cell.setNaverLink(link: "https://tv.naver.com" + item.naverUrl)
-                
-                let cellTap = UITapGestureRecognizerWithUrl(target: self, action: #selector(self?.openNewsUrl(sender:)))
-                cellTap.url = "https://tv.naver.com" + item.naverUrl
-                cell.addGestureRecognizer(cellTap)
-                
-            }.disposed(by: disposeBag)
-        
-        self.mediaCollectionView.rx.setDelegate(self)
-                    .disposed(by: disposeBag)
-
     }
-    
-    private func getInstaInfo() {
-        homeViewModel.getInstaInfo(team: 0)
-    }
-    
    
     
     @objc func openNewsUrl(sender: UITapGestureRecognizerWithUrl) {

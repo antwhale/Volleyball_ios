@@ -51,6 +51,8 @@
 		F8B4B3662ACB310600314E67 /* TeamInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B4B3652ACB310600314E67 /* TeamInfo.swift */; };
 		F8B665612ADABC0D00AAC526 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B665602ADABC0D00AAC526 /* SettingViewController.swift */; };
 		F8B665632ADAD5D800AAC526 /* SettingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B665622ADAD5D800AAC526 /* SettingCoordinator.swift */; };
+		F8B838702ADC03AD0006C801 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B8386F2ADC03AD0006C801 /* SettingViewModel.swift */; };
+		F8B838732ADC48120006C801 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B838722ADC48120006C801 /* Constant.swift */; };
 		F8BEA65F2AD2A88E00F4174B /* InstaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BEA65E2AD2A88E00F4174B /* InstaCollectionViewCell.swift */; };
 		F8E4C73E2ABEED1400579CB6 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E4C73D2ABEED1400579CB6 /* UIImageView+Extension.swift */; };
 		F8E4C7402ABF120800579CB6 /* NewsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E4C73F2ABF120800579CB6 /* NewsCoordinator.swift */; };
@@ -128,6 +130,8 @@
 		F8B4B3652ACB310600314E67 /* TeamInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamInfo.swift; sourceTree = "<group>"; };
 		F8B665602ADABC0D00AAC526 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		F8B665622ADAD5D800AAC526 /* SettingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCoordinator.swift; sourceTree = "<group>"; };
+		F8B8386F2ADC03AD0006C801 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
+		F8B838722ADC48120006C801 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		F8BEA65E2AD2A88E00F4174B /* InstaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaCollectionViewCell.swift; sourceTree = "<group>"; };
 		F8E4C73D2ABEED1400579CB6 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		F8E4C73F2ABF120800579CB6 /* NewsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCoordinator.swift; sourceTree = "<group>"; };
@@ -200,6 +204,7 @@
 		F80D39662AAC7B1400206DB7 /* Volleyball */ = {
 			isa = PBXGroup;
 			children = (
+				F8B838712ADC48010006C801 /* Constant */,
 				F86E40BC2ABEC3DC00827612 /* Views */,
 				F8B3DFB92AB6F9CE006F0468 /* Data */,
 				F8383C202AB5B5CE002A849C /* Utils */,
@@ -258,6 +263,7 @@
 			children = (
 				F8B3DFAF2AB6D498006F0468 /* HomeViewModel.swift */,
 				F8B3DFBC2AB6FDE8006F0468 /* NewsViewModel.swift */,
+				F8B8386F2ADC03AD0006C801 /* SettingViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -327,6 +333,14 @@
 				F8B4B3652ACB310600314E67 /* TeamInfo.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		F8B838712ADC48010006C801 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				F8B838722ADC48120006C801 /* Constant.swift */,
+			);
+			path = Constant;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -569,6 +583,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8B3DFB02AB6D498006F0468 /* HomeViewModel.swift in Sources */,
+				F8B838702ADC03AD0006C801 /* SettingViewModel.swift in Sources */,
 				F80D39A12AACAAE800206DB7 /* LoginCoordinator.swift in Sources */,
 				F80D399B2AAC812900206DB7 /* Coordinator.swift in Sources */,
 				F8009C7B2AB35A7600B712C4 /* SteadyViewController.swift in Sources */,
@@ -602,6 +617,7 @@
 				F80D396A2AAC7B1400206DB7 /* SceneDelegate.swift in Sources */,
 				F8695AF92AC9BDA800DAEC13 /* HomeCoordinator.swift in Sources */,
 				F8B4B3662ACB310600314E67 /* TeamInfo.swift in Sources */,
+				F8B838732ADC48120006C801 /* Constant.swift in Sources */,
 				F8B3DFB42AB6D51C006F0468 /* NewsViewController.swift in Sources */,
 				F8383C2A2AB5D956002A849C /* MainTabBarPage.swift in Sources */,
 				F8383C242AB5CBC2002A849C /* IntroCoordinator.swift in Sources */,
