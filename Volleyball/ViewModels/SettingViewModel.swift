@@ -15,6 +15,8 @@ class SettingViewModel {
         Log.debug(SettingViewModel.tag, "saveCheeringTeam : \(team)")
         
         UserDefaults.standard.set(team, forKey: "MyTeam")
+        
+        print("check userDefault: \(getCheeringTeam())")
     }
     
     func getCheeringTeam() -> Int {

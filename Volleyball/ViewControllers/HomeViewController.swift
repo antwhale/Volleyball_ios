@@ -119,12 +119,14 @@ class HomeViewController: UIViewController {
         label.text = "우리팀 소식"
         label.textColor = .black
         label.font = UIFont.boldSystemFont(ofSize: 18)
+        
         return label
     }()
     
     let newsImageView : UIImageView = {
         let imageView = UIImageView()
         imageView.isUserInteractionEnabled = true
+        
         return imageView
     }()
     
@@ -134,6 +136,7 @@ class HomeViewController: UIViewController {
         label.font = UIFont.boldSystemFont(ofSize: 16)
         label.textAlignment = .center
         label.isUserInteractionEnabled = true
+        
         return label
     }()
     
@@ -172,14 +175,8 @@ class HomeViewController: UIViewController {
         imageView.isUserInteractionEnabled = true
         imageView.contentMode = .scaleToFill
         imageView.image = UIImage(named: "kovomarket")
+        
         return imageView
-    }()
-    
-    let testBtn : UIButton = {
-       let button = UIButton()
-        button.setTitle("test button", for: .normal)
-        button.backgroundColor = .blue
-        return button
     }()
     
     let instaLabel : UILabel = {
@@ -196,6 +193,7 @@ class HomeViewController: UIViewController {
         layout.scrollDirection = .horizontal
         layout.minimumInteritemSpacing = 8.0
         layout.itemSize = CGSize(width: 100, height: 100)
+        
         return layout
     }()
     
@@ -207,7 +205,6 @@ class HomeViewController: UIViewController {
         collectionView.contentInset = .init(top: 0.0, left: 8.0, bottom: 0.0, right: 8.0)
 //        collectionView.backgroundColor = .black
         collectionView.clipsToBounds = true
-    
         collectionView.register(InstaCollectionViewCell.self, forCellWithReuseIdentifier: InstaCollectionViewCell.id)
         
         return collectionView
@@ -216,6 +213,7 @@ class HomeViewController: UIViewController {
     let divider2 : UIView = {
         let view = UIView()
         view.backgroundColor = .systemGray5
+        
         return view
     }()
     
@@ -233,19 +231,19 @@ class HomeViewController: UIViewController {
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 0
         layout.itemSize = CGSize(width: view.frame.size.width - 20, height: 150)
+        
         return layout
     }()
     
     lazy var mediaCollectionView : UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: self.mediaCollectionViewFlowLayout)
         collectionView.isScrollEnabled = true
-        collectionView.isPagingEnabled = false
+        collectionView.isPagingEnabled = true
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.showsVerticalScrollIndicator = false
         collectionView.contentInset = .init(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
         collectionView.backgroundColor = .black
         collectionView.clipsToBounds = true
-
         collectionView.register(NaverMediaCollectionViewCell.self, forCellWithReuseIdentifier: NaverMediaCollectionViewCell.id)
 
         return collectionView
@@ -264,6 +262,7 @@ class HomeViewController: UIViewController {
     let divider3 : UIView = {
         let view = UIView()
         view.backgroundColor = .systemGray5
+        
         return view
     }()
     
@@ -273,10 +272,11 @@ class HomeViewController: UIViewController {
         imageView.isUserInteractionEnabled = true
         imageView.contentMode = .scaleAspectFit
         imageView.backgroundColor = UIColor(named: "v9v9_color")
+        
         return imageView
     }()
     
-    lazy var cheeringTeam : Int = homeViewModel.getCheeringTeam()
+//    lazy var cheeringTeam : Int = homeViewModel.getCheeringTeam()
     
     let disposeBag = DisposeBag()
     
@@ -289,8 +289,6 @@ class HomeViewController: UIViewController {
         initViews()
         
         initSubscribe()
-        
-        
     }
     
     private func setupLayout() {
@@ -485,7 +483,6 @@ class HomeViewController: UIViewController {
         self.navigationItem.title = "배구배구"
         self.navigationController?.navigationBar.scrollEdgeAppearance?.titleTextAttributes = [.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.standardAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-        
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gearshape"), style: .plain, target: self, action: #selector(clickSetting))
     }
     
@@ -555,11 +552,11 @@ class HomeViewController: UIViewController {
             }
         })
         
-//        homeViewModel.instaItemSubject.subscribe(onNext: { instaArray in
-//            for item in instaArray {
-//                Log.debug(HomeViewController.tag, "instaItem link: \(item.linkUrl), img: \(item.thumbUrl)")
-//            }
-//        }).disposed(by: disposeBag)
+        homeViewModel.instaItemSubject.subscribe(onNext: { instaArray in
+            for item in instaArray {
+                Log.debug(HomeViewController.tag, "instaItem link: \(item.linkUrl), img: \(item.thumbUrl)")
+            }
+        }).disposed(by: disposeBag)
         
         homeViewModel.instaItemSubject.asObservable()
             .bind(to: self.instaCollectionView.rx.items(cellIdentifier: "InstaCollectionViewCell", cellType: InstaCollectionViewCell.self)){ index, item, cell in
@@ -571,7 +568,6 @@ class HomeViewController: UIViewController {
                 cell.setInstaLink(link: item.linkUrl)
                 
             }.disposed(by: disposeBag)
-        
 
         instaCollectionView.rx.modelSelected(MyTeamInstaItem.self)
                     .subscribe { instaItem in
@@ -585,13 +581,10 @@ class HomeViewController: UIViewController {
                     }.disposed(by: disposeBag)
         
         
-        
-        self.mediaCollectionView.rx.setDelegate(self)
-                    .disposed(by: disposeBag)
-
     }
     
     private func getInstaInfo() {
+        let cheeringTeam = homeViewModel.getCheeringTeam()
         homeViewModel.getInstaInfo(team: cheeringTeam)
     }
     
@@ -604,6 +597,7 @@ class HomeViewController: UIViewController {
         mediaCollectionView.dataSource = nil
         mediaCollectionView.delegate = nil
         
+        let cheeringTeam = homeViewModel.getCheeringTeam()
         homeViewModel.getNaverTvInfo(team: cheeringTeam)
             .do(onNext: {item in
                 print("sos onNext")
@@ -659,6 +653,10 @@ class HomeViewController: UIViewController {
                 self?.newsTitleLabel4.addGestureRecognizer(fourthNewsTap)
                 
             }).disposed(by: disposeBag)
+        
+        self.mediaCollectionView.rx.setDelegate(self)
+                    .disposed(by: disposeBag)
+
     }
    
     

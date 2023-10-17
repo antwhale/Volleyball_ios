@@ -96,7 +96,7 @@ class HomeViewModel {
     }
     
     func getNaverTvInfo(team: Int) -> Observable<[SliderItem]> {
-        Log.debug(tag, "getNaverTvInfo")
+        Log.debug(tag, "getNaverTvInfo, team: \(team)")
         
         return Observable.create { observer in
             

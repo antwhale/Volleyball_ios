@@ -53,7 +53,7 @@ class SettingViewController : UIViewController {
     }()
     
     
-    let teamList = ["GS칼텍스", "기업은행", "도로공사", "인삼공사", "페퍼저축은행", "현대거설", "흥국생명", "KB손해보험", "OK금융그룹", "대한항공", "삼성화재", "우리카드", "한국전력", "현대캐피탈", "기본"]
+    let teamList = ["GS칼텍스", "기업은행", "도로공사", "정관장", "페퍼저축은행", "현대거설", "흥국생명", "KB손해보험", "OK금융그룹", "대한항공", "삼성화재", "우리카드", "한국전력", "현대캐피탈", "기본"]
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
@@ -145,6 +145,7 @@ class SettingViewController : UIViewController {
                 
                 self?.cheeringTeamPicker.isHidden = true
                 
+                self?.settingViewModel.saveCheeringTeam(team: row)
                 
             }).disposed(by: disposeBag)
     }
