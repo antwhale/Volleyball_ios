@@ -10,6 +10,7 @@
 		0207DFCDCC752B76C42B33B6 /* Pods_Volleyball.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C5882ECF1AD037399094FC0 /* Pods_Volleyball.framework */; };
 		D634F7E5B6F0D6D3BE04D4BA /* Pods_Volleyball_VolleyballUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E91B744BDE802D36616D808 /* Pods_Volleyball_VolleyballUITests.framework */; };
 		E491CA861041BA94B9C9A601 /* Pods_VolleyballTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09229BBBC681E5C2C1874454 /* Pods_VolleyballTests.framework */; };
+		F39C44B32AE250A700C85B28 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F39C44B22AE250A700C85B28 /* GoogleService-Info.plist */; };
 		F8009C772AB34A8300B712C4 /* TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8009C762AB34A8300B712C4 /* TabCoordinator.swift */; };
 		F8009C792AB35A3C00B712C4 /* ReadyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8009C782AB35A3C00B712C4 /* ReadyViewController.swift */; };
 		F8009C7B2AB35A7600B712C4 /* SteadyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8009C7A2AB35A7600B712C4 /* SteadyViewController.swift */; };
@@ -36,7 +37,6 @@
 		F85526872AC6E72900CA17BC /* TeamRankCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85526862AC6E72900CA17BC /* TeamRankCoordinator.swift */; };
 		F85526892AC6F89800CA17BC /* PlayerRankCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85526882AC6F89800CA17BC /* PlayerRankCoordinator.swift */; };
 		F8695AF92AC9BDA800DAEC13 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8695AF82AC9BDA800DAEC13 /* HomeCoordinator.swift */; };
-		F8695AFB2AC9C1F600DAEC13 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F8695AFA2AC9C1F600DAEC13 /* GoogleService-Info.plist */; };
 		F86E40BE2ABEC44C00827612 /* XmlNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86E40BD2ABEC44C00827612 /* XmlNewsCell.swift */; };
 		F89AC60F2AD8547300A1BB0E /* NaverMediaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89AC60E2AD8547300A1BB0E /* NaverMediaCollectionViewCell.swift */; };
 		F8AA1E5C2ADB060900FD2306 /* ScheduleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AA1E5B2ADB060900FD2306 /* ScheduleCoordinator.swift */; };
@@ -85,6 +85,7 @@
 		4831EBA1630899A2A726544A /* Pods-Volleyball-VolleyballUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Volleyball-VolleyballUITests.release.xcconfig"; path = "Target Support Files/Pods-Volleyball-VolleyballUITests/Pods-Volleyball-VolleyballUITests.release.xcconfig"; sourceTree = "<group>"; };
 		54AE67E6F1ECE003C50C81D2 /* Pods-Volleyball.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Volleyball.debug.xcconfig"; path = "Target Support Files/Pods-Volleyball/Pods-Volleyball.debug.xcconfig"; sourceTree = "<group>"; };
 		5CCB45631BDD5A3FABE0BD2C /* Pods-VolleyballTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VolleyballTests.debug.xcconfig"; path = "Target Support Files/Pods-VolleyballTests/Pods-VolleyballTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F39C44B22AE250A700C85B28 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F8009C762AB34A8300B712C4 /* TabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinator.swift; sourceTree = "<group>"; };
 		F8009C782AB35A3C00B712C4 /* ReadyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadyViewController.swift; sourceTree = "<group>"; };
 		F8009C7A2AB35A7600B712C4 /* SteadyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteadyViewController.swift; sourceTree = "<group>"; };
@@ -115,7 +116,6 @@
 		F85526862AC6E72900CA17BC /* TeamRankCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamRankCoordinator.swift; sourceTree = "<group>"; };
 		F85526882AC6F89800CA17BC /* PlayerRankCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerRankCoordinator.swift; sourceTree = "<group>"; };
 		F8695AF82AC9BDA800DAEC13 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
-		F8695AFA2AC9C1F600DAEC13 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F86E40BD2ABEC44C00827612 /* XmlNewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XmlNewsCell.swift; sourceTree = "<group>"; };
 		F89AC60E2AD8547300A1BB0E /* NaverMediaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverMediaCollectionViewCell.swift; sourceTree = "<group>"; };
 		F8AA1E5B2ADB060900FD2306 /* ScheduleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCoordinator.swift; sourceTree = "<group>"; };
@@ -217,7 +217,7 @@
 				F80D39702AAC7B1600206DB7 /* Assets.xcassets */,
 				F80D39722AAC7B1600206DB7 /* LaunchScreen.storyboard */,
 				F80D39752AAC7B1600206DB7 /* Info.plist */,
-				F8695AFA2AC9C1F600DAEC13 /* GoogleService-Info.plist */,
+				F39C44B22AE250A700C85B28 /* GoogleService-Info.plist */,
 			);
 			path = Volleyball;
 			sourceTree = "<group>";
@@ -454,7 +454,7 @@
 			files = (
 				F80D39742AAC7B1600206DB7 /* LaunchScreen.storyboard in Resources */,
 				F80D39712AAC7B1600206DB7 /* Assets.xcassets in Resources */,
-				F8695AFB2AC9C1F600DAEC13 /* GoogleService-Info.plist in Resources */,
+				F39C44B32AE250A700C85B28 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
