@@ -10,7 +10,6 @@
 		0207DFCDCC752B76C42B33B6 /* Pods_Volleyball.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C5882ECF1AD037399094FC0 /* Pods_Volleyball.framework */; };
 		D634F7E5B6F0D6D3BE04D4BA /* Pods_Volleyball_VolleyballUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E91B744BDE802D36616D808 /* Pods_Volleyball_VolleyballUITests.framework */; };
 		E491CA861041BA94B9C9A601 /* Pods_VolleyballTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09229BBBC681E5C2C1874454 /* Pods_VolleyballTests.framework */; };
-		F39C44B32AE250A700C85B28 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F39C44B22AE250A700C85B28 /* GoogleService-Info.plist */; };
 		F8009C772AB34A8300B712C4 /* TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8009C762AB34A8300B712C4 /* TabCoordinator.swift */; };
 		F8009C792AB35A3C00B712C4 /* ReadyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8009C782AB35A3C00B712C4 /* ReadyViewController.swift */; };
 		F8009C7B2AB35A7600B712C4 /* SteadyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8009C7A2AB35A7600B712C4 /* SteadyViewController.swift */; };
@@ -38,6 +37,49 @@
 		F85526892AC6F89800CA17BC /* PlayerRankCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85526882AC6F89800CA17BC /* PlayerRankCoordinator.swift */; };
 		F8695AF92AC9BDA800DAEC13 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8695AF82AC9BDA800DAEC13 /* HomeCoordinator.swift */; };
 		F86E40BE2ABEC44C00827612 /* XmlNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86E40BD2ABEC44C00827612 /* XmlNewsCell.swift */; };
+		F86EF7102AE2D5E3009CEAF4 /* PlayerRankCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EF6DE2AE2D5E3009CEAF4 /* PlayerRankCoordinator.swift */; };
+		F86EF7112AE2D5E3009CEAF4 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EF6DF2AE2D5E3009CEAF4 /* AppCoordinator.swift */; };
+		F86EF7122AE2D5E3009CEAF4 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EF6E02AE2D5E3009CEAF4 /* LoginCoordinator.swift */; };
+		F86EF7132AE2D5E3009CEAF4 /* ScheduleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EF6E12AE2D5E3009CEAF4 /* ScheduleCoordinator.swift */; };
+		F86EF7142AE2D5E3009CEAF4 /* TeamRankCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EF6E22AE2D5E3009CEAF4 /* TeamRankCoordinator.swift */; };
+		F86EF7152AE2D5E3009CEAF4 /* SettingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EF6E32AE2D5E3009CEAF4 /* SettingCoordinator.swift */; };
+		F86EF7162AE2D5E3009CEAF4 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EF6E42AE2D5E3009CEAF4 /* HomeCoordinator.swift */; };
+		F86EF7172AE2D5E3009CEAF4 /* NewsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EF6E52AE2D5E3009CEAF4 /* NewsCoordinator.swift */; };
+		F86EF7182AE2D5E3009CEAF4 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EF6E62AE2D5E3009CEAF4 /* MainCoordinator.swift */; };
+		F86EF7192AE2D5E3009CEAF4 /* IntroCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EF6E72AE2D5E3009CEAF4 /* IntroCoordinator.swift */; };
+		F86EF71A2AE2D5E3009CEAF4 /* TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EF6E82AE2D5E3009CEAF4 /* TabCoordinator.swift */; };
+		F86EF71B2AE2D5E3009CEAF4 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EF6E92AE2D5E3009CEAF4 /* Coordinator.swift */; };
+		F86EF71C2AE2D5E3009CEAF4 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EF6EB2AE2D5E3009CEAF4 /* HomeViewModel.swift */; };
+		F86EF71D2AE2D5E3009CEAF4 /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EF6EC2AE2D5E3009CEAF4 /* NewsViewModel.swift */; };
+		F86EF71E2AE2D5E3009CEAF4 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EF6ED2AE2D5E3009CEAF4 /* SettingViewModel.swift */; };
+		F86EF71F2AE2D5E3009CEAF4 /* MainTabBarPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EF6EF2AE2D5E3009CEAF4 /* MainTabBarPage.swift */; };
+		F86EF7202AE2D5E3009CEAF4 /* TabBarPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EF6F02AE2D5E3009CEAF4 /* TabBarPage.swift */; };
+		F86EF7212AE2D5E3009CEAF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F86EF6F12AE2D5E3009CEAF4 /* Assets.xcassets */; };
+		F86EF7222AE2D5E3009CEAF4 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EF6F32AE2D5E3009CEAF4 /* UIImageView+Extension.swift */; };
+		F86EF7232AE2D5E3009CEAF4 /* OSLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EF6F42AE2D5E3009CEAF4 /* OSLog.swift */; };
+		F86EF7242AE2D5E3009CEAF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F86EF6F52AE2D5E3009CEAF4 /* LaunchScreen.storyboard */; };
+		F86EF7252AE2D5E3009CEAF4 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EF6F82AE2D5E3009CEAF4 /* SettingViewController.swift */; };
+		F86EF7262AE2D5E3009CEAF4 /* ReadyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EF6F92AE2D5E3009CEAF4 /* ReadyViewController.swift */; };
+		F86EF7272AE2D5E3009CEAF4 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EF6FA2AE2D5E3009CEAF4 /* IntroViewController.swift */; };
+		F86EF7282AE2D5E3009CEAF4 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EF6FB2AE2D5E3009CEAF4 /* ScheduleViewController.swift */; };
+		F86EF7292AE2D5E3009CEAF4 /* PlayerRankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EF6FC2AE2D5E3009CEAF4 /* PlayerRankViewController.swift */; };
+		F86EF72A2AE2D5E3009CEAF4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EF6FD2AE2D5E3009CEAF4 /* MainViewController.swift */; };
+		F86EF72B2AE2D5E3009CEAF4 /* GoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EF6FE2AE2D5E3009CEAF4 /* GoViewController.swift */; };
+		F86EF72C2AE2D5E3009CEAF4 /* TeamRankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EF6FF2AE2D5E3009CEAF4 /* TeamRankViewController.swift */; };
+		F86EF72D2AE2D5E3009CEAF4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EF7002AE2D5E3009CEAF4 /* HomeViewController.swift */; };
+		F86EF72E2AE2D5E3009CEAF4 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EF7012AE2D5E3009CEAF4 /* NewsViewController.swift */; };
+		F86EF72F2AE2D5E3009CEAF4 /* SteadyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EF7022AE2D5E3009CEAF4 /* SteadyViewController.swift */; };
+		F86EF7302AE2D5E3009CEAF4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EF7032AE2D5E3009CEAF4 /* LoginViewController.swift */; };
+		F86EF7312AE2D5E3009CEAF4 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EF7052AE2D5E3009CEAF4 /* Constant.swift */; };
+		F86EF7322AE2D5E3009CEAF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EF7062AE2D5E3009CEAF4 /* AppDelegate.swift */; };
+		F86EF7332AE2D5E3009CEAF4 /* TeamInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EF7082AE2D5E3009CEAF4 /* TeamInfo.swift */; };
+		F86EF7342AE2D5E3009CEAF4 /* XmlNewsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EF7092AE2D5E3009CEAF4 /* XmlNewsData.swift */; };
+		F86EF7352AE2D5E3009CEAF4 /* NaverMediaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EF70B2AE2D5E3009CEAF4 /* NaverMediaCollectionViewCell.swift */; };
+		F86EF7362AE2D5E3009CEAF4 /* InstaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EF70C2AE2D5E3009CEAF4 /* InstaCollectionViewCell.swift */; };
+		F86EF7372AE2D5E3009CEAF4 /* XmlNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EF70D2AE2D5E3009CEAF4 /* XmlNewsCell.swift */; };
+		F86EF7382AE2D5E3009CEAF4 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F86EF70E2AE2D5E3009CEAF4 /* Info.plist */; };
+		F86EF7392AE2D5E3009CEAF4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EF70F2AE2D5E3009CEAF4 /* SceneDelegate.swift */; };
+		F86EF73B2AE2D716009CEAF4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F86EF73A2AE2D716009CEAF4 /* GoogleService-Info.plist */; };
 		F89AC60F2AD8547300A1BB0E /* NaverMediaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89AC60E2AD8547300A1BB0E /* NaverMediaCollectionViewCell.swift */; };
 		F8AA1E5C2ADB060900FD2306 /* ScheduleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AA1E5B2ADB060900FD2306 /* ScheduleCoordinator.swift */; };
 		F8B3DFAE2AB6D469006F0468 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B3DFAD2AB6D469006F0468 /* HomeViewController.swift */; };
@@ -85,7 +127,6 @@
 		4831EBA1630899A2A726544A /* Pods-Volleyball-VolleyballUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Volleyball-VolleyballUITests.release.xcconfig"; path = "Target Support Files/Pods-Volleyball-VolleyballUITests/Pods-Volleyball-VolleyballUITests.release.xcconfig"; sourceTree = "<group>"; };
 		54AE67E6F1ECE003C50C81D2 /* Pods-Volleyball.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Volleyball.debug.xcconfig"; path = "Target Support Files/Pods-Volleyball/Pods-Volleyball.debug.xcconfig"; sourceTree = "<group>"; };
 		5CCB45631BDD5A3FABE0BD2C /* Pods-VolleyballTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VolleyballTests.debug.xcconfig"; path = "Target Support Files/Pods-VolleyballTests/Pods-VolleyballTests.debug.xcconfig"; sourceTree = "<group>"; };
-		F39C44B22AE250A700C85B28 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F8009C762AB34A8300B712C4 /* TabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinator.swift; sourceTree = "<group>"; };
 		F8009C782AB35A3C00B712C4 /* ReadyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadyViewController.swift; sourceTree = "<group>"; };
 		F8009C7A2AB35A7600B712C4 /* SteadyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteadyViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +158,49 @@
 		F85526882AC6F89800CA17BC /* PlayerRankCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerRankCoordinator.swift; sourceTree = "<group>"; };
 		F8695AF82AC9BDA800DAEC13 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		F86E40BD2ABEC44C00827612 /* XmlNewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XmlNewsCell.swift; sourceTree = "<group>"; };
+		F86EF6DE2AE2D5E3009CEAF4 /* PlayerRankCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerRankCoordinator.swift; sourceTree = "<group>"; };
+		F86EF6DF2AE2D5E3009CEAF4 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		F86EF6E02AE2D5E3009CEAF4 /* LoginCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		F86EF6E12AE2D5E3009CEAF4 /* ScheduleCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleCoordinator.swift; sourceTree = "<group>"; };
+		F86EF6E22AE2D5E3009CEAF4 /* TeamRankCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamRankCoordinator.swift; sourceTree = "<group>"; };
+		F86EF6E32AE2D5E3009CEAF4 /* SettingCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingCoordinator.swift; sourceTree = "<group>"; };
+		F86EF6E42AE2D5E3009CEAF4 /* HomeCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		F86EF6E52AE2D5E3009CEAF4 /* NewsCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsCoordinator.swift; sourceTree = "<group>"; };
+		F86EF6E62AE2D5E3009CEAF4 /* MainCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		F86EF6E72AE2D5E3009CEAF4 /* IntroCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroCoordinator.swift; sourceTree = "<group>"; };
+		F86EF6E82AE2D5E3009CEAF4 /* TabCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabCoordinator.swift; sourceTree = "<group>"; };
+		F86EF6E92AE2D5E3009CEAF4 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		F86EF6EB2AE2D5E3009CEAF4 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		F86EF6EC2AE2D5E3009CEAF4 /* NewsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
+		F86EF6ED2AE2D5E3009CEAF4 /* SettingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
+		F86EF6EF2AE2D5E3009CEAF4 /* MainTabBarPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarPage.swift; sourceTree = "<group>"; };
+		F86EF6F02AE2D5E3009CEAF4 /* TabBarPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarPage.swift; sourceTree = "<group>"; };
+		F86EF6F12AE2D5E3009CEAF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F86EF6F32AE2D5E3009CEAF4 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		F86EF6F42AE2D5E3009CEAF4 /* OSLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSLog.swift; sourceTree = "<group>"; };
+		F86EF6F62AE2D5E3009CEAF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F86EF6F82AE2D5E3009CEAF4 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		F86EF6F92AE2D5E3009CEAF4 /* ReadyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadyViewController.swift; sourceTree = "<group>"; };
+		F86EF6FA2AE2D5E3009CEAF4 /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		F86EF6FB2AE2D5E3009CEAF4 /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+		F86EF6FC2AE2D5E3009CEAF4 /* PlayerRankViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerRankViewController.swift; sourceTree = "<group>"; };
+		F86EF6FD2AE2D5E3009CEAF4 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		F86EF6FE2AE2D5E3009CEAF4 /* GoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoViewController.swift; sourceTree = "<group>"; };
+		F86EF6FF2AE2D5E3009CEAF4 /* TeamRankViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamRankViewController.swift; sourceTree = "<group>"; };
+		F86EF7002AE2D5E3009CEAF4 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F86EF7012AE2D5E3009CEAF4 /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		F86EF7022AE2D5E3009CEAF4 /* SteadyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SteadyViewController.swift; sourceTree = "<group>"; };
+		F86EF7032AE2D5E3009CEAF4 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F86EF7052AE2D5E3009CEAF4 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		F86EF7062AE2D5E3009CEAF4 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F86EF7082AE2D5E3009CEAF4 /* TeamInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamInfo.swift; sourceTree = "<group>"; };
+		F86EF7092AE2D5E3009CEAF4 /* XmlNewsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XmlNewsData.swift; sourceTree = "<group>"; };
+		F86EF70B2AE2D5E3009CEAF4 /* NaverMediaCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NaverMediaCollectionViewCell.swift; sourceTree = "<group>"; };
+		F86EF70C2AE2D5E3009CEAF4 /* InstaCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstaCollectionViewCell.swift; sourceTree = "<group>"; };
+		F86EF70D2AE2D5E3009CEAF4 /* XmlNewsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XmlNewsCell.swift; sourceTree = "<group>"; };
+		F86EF70E2AE2D5E3009CEAF4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F86EF70F2AE2D5E3009CEAF4 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		F86EF73A2AE2D716009CEAF4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F89AC60E2AD8547300A1BB0E /* NaverMediaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverMediaCollectionViewCell.swift; sourceTree = "<group>"; };
 		F8AA1E5B2ADB060900FD2306 /* ScheduleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCoordinator.swift; sourceTree = "<group>"; };
 		F8B3DFAD2AB6D469006F0468 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -217,7 +301,8 @@
 				F80D39702AAC7B1600206DB7 /* Assets.xcassets */,
 				F80D39722AAC7B1600206DB7 /* LaunchScreen.storyboard */,
 				F80D39752AAC7B1600206DB7 /* Info.plist */,
-				F39C44B22AE250A700C85B28 /* GoogleService-Info.plist */,
+				F86EF73A2AE2D716009CEAF4 /* GoogleService-Info.plist */,
+				F86EF6DC2AE2D5E3009CEAF4 /* Volleyball */,
 			);
 			path = Volleyball;
 			sourceTree = "<group>";
@@ -322,6 +407,119 @@
 				F86E40BD2ABEC44C00827612 /* XmlNewsCell.swift */,
 				F8BEA65E2AD2A88E00F4174B /* InstaCollectionViewCell.swift */,
 				F89AC60E2AD8547300A1BB0E /* NaverMediaCollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F86EF6DC2AE2D5E3009CEAF4 /* Volleyball */ = {
+			isa = PBXGroup;
+			children = (
+				F86EF6DD2AE2D5E3009CEAF4 /* Coordinators */,
+				F86EF6EA2AE2D5E3009CEAF4 /* ViewModels */,
+				F86EF6EE2AE2D5E3009CEAF4 /* Enums */,
+				F86EF6F12AE2D5E3009CEAF4 /* Assets.xcassets */,
+				F86EF6F22AE2D5E3009CEAF4 /* Utils */,
+				F86EF6F52AE2D5E3009CEAF4 /* LaunchScreen.storyboard */,
+				F86EF6F72AE2D5E3009CEAF4 /* ViewControllers */,
+				F86EF7042AE2D5E3009CEAF4 /* Constant */,
+				F86EF7062AE2D5E3009CEAF4 /* AppDelegate.swift */,
+				F86EF7072AE2D5E3009CEAF4 /* Data */,
+				F86EF70A2AE2D5E3009CEAF4 /* Views */,
+				F86EF70E2AE2D5E3009CEAF4 /* Info.plist */,
+				F86EF70F2AE2D5E3009CEAF4 /* SceneDelegate.swift */,
+			);
+			name = Volleyball;
+			sourceTree = "<group>";
+		};
+		F86EF6DD2AE2D5E3009CEAF4 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				F86EF6DE2AE2D5E3009CEAF4 /* PlayerRankCoordinator.swift */,
+				F86EF6DF2AE2D5E3009CEAF4 /* AppCoordinator.swift */,
+				F86EF6E02AE2D5E3009CEAF4 /* LoginCoordinator.swift */,
+				F86EF6E12AE2D5E3009CEAF4 /* ScheduleCoordinator.swift */,
+				F86EF6E22AE2D5E3009CEAF4 /* TeamRankCoordinator.swift */,
+				F86EF6E32AE2D5E3009CEAF4 /* SettingCoordinator.swift */,
+				F86EF6E42AE2D5E3009CEAF4 /* HomeCoordinator.swift */,
+				F86EF6E52AE2D5E3009CEAF4 /* NewsCoordinator.swift */,
+				F86EF6E62AE2D5E3009CEAF4 /* MainCoordinator.swift */,
+				F86EF6E72AE2D5E3009CEAF4 /* IntroCoordinator.swift */,
+				F86EF6E82AE2D5E3009CEAF4 /* TabCoordinator.swift */,
+				F86EF6E92AE2D5E3009CEAF4 /* Coordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		F86EF6EA2AE2D5E3009CEAF4 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F86EF6EB2AE2D5E3009CEAF4 /* HomeViewModel.swift */,
+				F86EF6EC2AE2D5E3009CEAF4 /* NewsViewModel.swift */,
+				F86EF6ED2AE2D5E3009CEAF4 /* SettingViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F86EF6EE2AE2D5E3009CEAF4 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				F86EF6EF2AE2D5E3009CEAF4 /* MainTabBarPage.swift */,
+				F86EF6F02AE2D5E3009CEAF4 /* TabBarPage.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		F86EF6F22AE2D5E3009CEAF4 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F86EF6F32AE2D5E3009CEAF4 /* UIImageView+Extension.swift */,
+				F86EF6F42AE2D5E3009CEAF4 /* OSLog.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		F86EF6F72AE2D5E3009CEAF4 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F86EF6F82AE2D5E3009CEAF4 /* SettingViewController.swift */,
+				F86EF6F92AE2D5E3009CEAF4 /* ReadyViewController.swift */,
+				F86EF6FA2AE2D5E3009CEAF4 /* IntroViewController.swift */,
+				F86EF6FB2AE2D5E3009CEAF4 /* ScheduleViewController.swift */,
+				F86EF6FC2AE2D5E3009CEAF4 /* PlayerRankViewController.swift */,
+				F86EF6FD2AE2D5E3009CEAF4 /* MainViewController.swift */,
+				F86EF6FE2AE2D5E3009CEAF4 /* GoViewController.swift */,
+				F86EF6FF2AE2D5E3009CEAF4 /* TeamRankViewController.swift */,
+				F86EF7002AE2D5E3009CEAF4 /* HomeViewController.swift */,
+				F86EF7012AE2D5E3009CEAF4 /* NewsViewController.swift */,
+				F86EF7022AE2D5E3009CEAF4 /* SteadyViewController.swift */,
+				F86EF7032AE2D5E3009CEAF4 /* LoginViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F86EF7042AE2D5E3009CEAF4 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				F86EF7052AE2D5E3009CEAF4 /* Constant.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		F86EF7072AE2D5E3009CEAF4 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				F86EF7082AE2D5E3009CEAF4 /* TeamInfo.swift */,
+				F86EF7092AE2D5E3009CEAF4 /* XmlNewsData.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		F86EF70A2AE2D5E3009CEAF4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F86EF70B2AE2D5E3009CEAF4 /* NaverMediaCollectionViewCell.swift */,
+				F86EF70C2AE2D5E3009CEAF4 /* InstaCollectionViewCell.swift */,
+				F86EF70D2AE2D5E3009CEAF4 /* XmlNewsCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -453,8 +651,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F80D39742AAC7B1600206DB7 /* LaunchScreen.storyboard in Resources */,
+				F86EF7382AE2D5E3009CEAF4 /* Info.plist in Resources */,
+				F86EF7212AE2D5E3009CEAF4 /* Assets.xcassets in Resources */,
+				F86EF7242AE2D5E3009CEAF4 /* LaunchScreen.storyboard in Resources */,
 				F80D39712AAC7B1600206DB7 /* Assets.xcassets in Resources */,
-				F39C44B32AE250A700C85B28 /* GoogleService-Info.plist in Resources */,
+				F86EF73B2AE2D716009CEAF4 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -582,43 +783,82 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F86EF7252AE2D5E3009CEAF4 /* SettingViewController.swift in Sources */,
 				F8B3DFB02AB6D498006F0468 /* HomeViewModel.swift in Sources */,
 				F8B838702ADC03AD0006C801 /* SettingViewModel.swift in Sources */,
 				F80D39A12AACAAE800206DB7 /* LoginCoordinator.swift in Sources */,
 				F80D399B2AAC812900206DB7 /* Coordinator.swift in Sources */,
+				F86EF7352AE2D5E3009CEAF4 /* NaverMediaCollectionViewCell.swift in Sources */,
 				F8009C7B2AB35A7600B712C4 /* SteadyViewController.swift in Sources */,
+				F86EF7312AE2D5E3009CEAF4 /* Constant.swift in Sources */,
 				F8383C1C2AB5B45A002A849C /* IntroViewController.swift in Sources */,
 				F8B665612ADABC0D00AAC526 /* SettingViewController.swift in Sources */,
+				F86EF7152AE2D5E3009CEAF4 /* SettingCoordinator.swift in Sources */,
 				F8009C772AB34A8300B712C4 /* TabCoordinator.swift in Sources */,
 				F8B3DFAE2AB6D469006F0468 /* HomeViewController.swift in Sources */,
 				F80D396C2AAC7B1400206DB7 /* LoginViewController.swift in Sources */,
 				F8B3DFB82AB6D575006F0468 /* PlayerRankViewController.swift in Sources */,
+				F86EF7202AE2D5E3009CEAF4 /* TabBarPage.swift in Sources */,
+				F86EF7102AE2D5E3009CEAF4 /* PlayerRankCoordinator.swift in Sources */,
 				F8009C792AB35A3C00B712C4 /* ReadyViewController.swift in Sources */,
+				F86EF7172AE2D5E3009CEAF4 /* NewsCoordinator.swift in Sources */,
+				F86EF71F2AE2D5E3009CEAF4 /* MainTabBarPage.swift in Sources */,
 				F80D39682AAC7B1400206DB7 /* AppDelegate.swift in Sources */,
 				F85526892AC6F89800CA17BC /* PlayerRankCoordinator.swift in Sources */,
+				F86EF7142AE2D5E3009CEAF4 /* TeamRankCoordinator.swift in Sources */,
+				F86EF7292AE2D5E3009CEAF4 /* PlayerRankViewController.swift in Sources */,
+				F86EF7112AE2D5E3009CEAF4 /* AppCoordinator.swift in Sources */,
 				F8B3DFBB2AB6FA10006F0468 /* XmlNewsData.swift in Sources */,
 				F8E4C73E2ABEED1400579CB6 /* UIImageView+Extension.swift in Sources */,
+				F86EF7342AE2D5E3009CEAF4 /* XmlNewsData.swift in Sources */,
 				F8BEA65F2AD2A88E00F4174B /* InstaCollectionViewCell.swift in Sources */,
 				F86E40BE2ABEC44C00827612 /* XmlNewsCell.swift in Sources */,
 				F8B3DFBD2AB6FDE8006F0468 /* NewsViewModel.swift in Sources */,
+				F86EF7302AE2D5E3009CEAF4 /* LoginViewController.swift in Sources */,
 				F8009C7D2AB35A9C00B712C4 /* GoViewController.swift in Sources */,
+				F86EF71D2AE2D5E3009CEAF4 /* NewsViewModel.swift in Sources */,
+				F86EF7182AE2D5E3009CEAF4 /* MainCoordinator.swift in Sources */,
 				F8383C282AB5D8EA002A849C /* MainCoordinator.swift in Sources */,
+				F86EF72D2AE2D5E3009CEAF4 /* HomeViewController.swift in Sources */,
 				F8383C262AB5D738002A849C /* MainViewController.swift in Sources */,
+				F86EF7362AE2D5E3009CEAF4 /* InstaCollectionViewCell.swift in Sources */,
+				F86EF7132AE2D5E3009CEAF4 /* ScheduleCoordinator.swift in Sources */,
+				F86EF72B2AE2D5E3009CEAF4 /* GoViewController.swift in Sources */,
 				F80D399D2AAC82AD00206DB7 /* AppCoordinator.swift in Sources */,
+				F86EF71A2AE2D5E3009CEAF4 /* TabCoordinator.swift in Sources */,
 				F8383C222AB5B5DE002A849C /* OSLog.swift in Sources */,
 				F8B3DFB62AB6D544006F0468 /* TeamRankViewController.swift in Sources */,
+				F86EF7282AE2D5E3009CEAF4 /* ScheduleViewController.swift in Sources */,
 				F8AA1E5C2ADB060900FD2306 /* ScheduleCoordinator.swift in Sources */,
+				F86EF7392AE2D5E3009CEAF4 /* SceneDelegate.swift in Sources */,
 				F8E4C7402ABF120800579CB6 /* NewsCoordinator.swift in Sources */,
+				F86EF7232AE2D5E3009CEAF4 /* OSLog.swift in Sources */,
+				F86EF7262AE2D5E3009CEAF4 /* ReadyViewController.swift in Sources */,
 				F8B665632ADAD5D800AAC526 /* SettingCoordinator.swift in Sources */,
+				F86EF7322AE2D5E3009CEAF4 /* AppDelegate.swift in Sources */,
+				F86EF7122AE2D5E3009CEAF4 /* LoginCoordinator.swift in Sources */,
 				F89AC60F2AD8547300A1BB0E /* NaverMediaCollectionViewCell.swift in Sources */,
 				F8B3DFB22AB6D4D8006F0468 /* ScheduleViewController.swift in Sources */,
 				F85526872AC6E72900CA17BC /* TeamRankCoordinator.swift in Sources */,
 				F80D39A42AACD97F00206DB7 /* TabBarPage.swift in Sources */,
 				F80D396A2AAC7B1400206DB7 /* SceneDelegate.swift in Sources */,
+				F86EF71E2AE2D5E3009CEAF4 /* SettingViewModel.swift in Sources */,
+				F86EF7192AE2D5E3009CEAF4 /* IntroCoordinator.swift in Sources */,
+				F86EF7162AE2D5E3009CEAF4 /* HomeCoordinator.swift in Sources */,
+				F86EF71B2AE2D5E3009CEAF4 /* Coordinator.swift in Sources */,
 				F8695AF92AC9BDA800DAEC13 /* HomeCoordinator.swift in Sources */,
+				F86EF72A2AE2D5E3009CEAF4 /* MainViewController.swift in Sources */,
 				F8B4B3662ACB310600314E67 /* TeamInfo.swift in Sources */,
+				F86EF71C2AE2D5E3009CEAF4 /* HomeViewModel.swift in Sources */,
+				F86EF7372AE2D5E3009CEAF4 /* XmlNewsCell.swift in Sources */,
+				F86EF72F2AE2D5E3009CEAF4 /* SteadyViewController.swift in Sources */,
+				F86EF72C2AE2D5E3009CEAF4 /* TeamRankViewController.swift in Sources */,
+				F86EF7272AE2D5E3009CEAF4 /* IntroViewController.swift in Sources */,
 				F8B838732ADC48120006C801 /* Constant.swift in Sources */,
+				F86EF72E2AE2D5E3009CEAF4 /* NewsViewController.swift in Sources */,
 				F8B3DFB42AB6D51C006F0468 /* NewsViewController.swift in Sources */,
+				F86EF7332AE2D5E3009CEAF4 /* TeamInfo.swift in Sources */,
+				F86EF7222AE2D5E3009CEAF4 /* UIImageView+Extension.swift in Sources */,
 				F8383C2A2AB5D956002A849C /* MainTabBarPage.swift in Sources */,
 				F8383C242AB5CBC2002A849C /* IntroCoordinator.swift in Sources */,
 			);
@@ -661,6 +901,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				F80D39732AAC7B1600206DB7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F86EF6F52AE2D5E3009CEAF4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F86EF6F62AE2D5E3009CEAF4 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
