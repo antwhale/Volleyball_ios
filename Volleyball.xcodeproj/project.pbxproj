@@ -77,9 +77,7 @@
 		F86EF7352AE2D5E3009CEAF4 /* NaverMediaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EF70B2AE2D5E3009CEAF4 /* NaverMediaCollectionViewCell.swift */; };
 		F86EF7362AE2D5E3009CEAF4 /* InstaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EF70C2AE2D5E3009CEAF4 /* InstaCollectionViewCell.swift */; };
 		F86EF7372AE2D5E3009CEAF4 /* XmlNewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EF70D2AE2D5E3009CEAF4 /* XmlNewsCell.swift */; };
-		F86EF7382AE2D5E3009CEAF4 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F86EF70E2AE2D5E3009CEAF4 /* Info.plist */; };
 		F86EF7392AE2D5E3009CEAF4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86EF70F2AE2D5E3009CEAF4 /* SceneDelegate.swift */; };
-		F86EF73B2AE2D716009CEAF4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F86EF73A2AE2D716009CEAF4 /* GoogleService-Info.plist */; };
 		F89AC60F2AD8547300A1BB0E /* NaverMediaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89AC60E2AD8547300A1BB0E /* NaverMediaCollectionViewCell.swift */; };
 		F8AA1E5C2ADB060900FD2306 /* ScheduleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AA1E5B2ADB060900FD2306 /* ScheduleCoordinator.swift */; };
 		F8B3DFAE2AB6D469006F0468 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B3DFAD2AB6D469006F0468 /* HomeViewController.swift */; };
@@ -651,11 +649,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F80D39742AAC7B1600206DB7 /* LaunchScreen.storyboard in Resources */,
-				F86EF7382AE2D5E3009CEAF4 /* Info.plist in Resources */,
 				F86EF7212AE2D5E3009CEAF4 /* Assets.xcassets in Resources */,
 				F86EF7242AE2D5E3009CEAF4 /* LaunchScreen.storyboard in Resources */,
 				F80D39712AAC7B1600206DB7 /* Assets.xcassets in Resources */,
-				F86EF73B2AE2D716009CEAF4 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
