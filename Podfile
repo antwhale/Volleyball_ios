@@ -9,6 +9,8 @@ target 'Volleyball' do
   pod 'RxSwift', '6.5.0'
   pod 'RxCocoa', '6.5.0'
   pod 'FirebaseCrashlytics'
+  pod 'FirebaseMessaging'
+  pod 'FirebaseFunctions'
   pod 'FirebaseDatabase'
   pod 'FirebaseAnalytics' 
   pod 'SwiftSoup', '2.0.0'
