@@ -10,6 +10,8 @@
 		0207DFCDCC752B76C42B33B6 /* Pods_Volleyball.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C5882ECF1AD037399094FC0 /* Pods_Volleyball.framework */; };
 		D634F7E5B6F0D6D3BE04D4BA /* Pods_Volleyball_VolleyballUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E91B744BDE802D36616D808 /* Pods_Volleyball_VolleyballUITests.framework */; };
 		E491CA861041BA94B9C9A601 /* Pods_VolleyballTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09229BBBC681E5C2C1874454 /* Pods_VolleyballTests.framework */; };
+		F35CECF12AE756AF00B8C2A5 /* FirebaseMessagingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35CECF02AE756AF00B8C2A5 /* FirebaseMessagingService.swift */; };
+		F35CECF32AE7771800B8C2A5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F35CECF22AE7771800B8C2A5 /* GoogleService-Info.plist */; };
 		F8009C772AB34A8300B712C4 /* TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8009C762AB34A8300B712C4 /* TabCoordinator.swift */; };
 		F8009C792AB35A3C00B712C4 /* ReadyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8009C782AB35A3C00B712C4 /* ReadyViewController.swift */; };
 		F8009C7B2AB35A7600B712C4 /* SteadyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8009C7A2AB35A7600B712C4 /* SteadyViewController.swift */; };
@@ -125,6 +127,9 @@
 		4831EBA1630899A2A726544A /* Pods-Volleyball-VolleyballUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Volleyball-VolleyballUITests.release.xcconfig"; path = "Target Support Files/Pods-Volleyball-VolleyballUITests/Pods-Volleyball-VolleyballUITests.release.xcconfig"; sourceTree = "<group>"; };
 		54AE67E6F1ECE003C50C81D2 /* Pods-Volleyball.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Volleyball.debug.xcconfig"; path = "Target Support Files/Pods-Volleyball/Pods-Volleyball.debug.xcconfig"; sourceTree = "<group>"; };
 		5CCB45631BDD5A3FABE0BD2C /* Pods-VolleyballTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VolleyballTests.debug.xcconfig"; path = "Target Support Files/Pods-VolleyballTests/Pods-VolleyballTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F35CECF02AE756AF00B8C2A5 /* FirebaseMessagingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseMessagingService.swift; sourceTree = "<group>"; };
+		F35CECF22AE7771800B8C2A5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F35CECF42AE7793400B8C2A5 /* Volleyball.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Volleyball.entitlements; sourceTree = "<group>"; };
 		F8009C762AB34A8300B712C4 /* TabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinator.swift; sourceTree = "<group>"; };
 		F8009C782AB35A3C00B712C4 /* ReadyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadyViewController.swift; sourceTree = "<group>"; };
 		F8009C7A2AB35A7600B712C4 /* SteadyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteadyViewController.swift; sourceTree = "<group>"; };
@@ -198,7 +203,6 @@
 		F86EF70D2AE2D5E3009CEAF4 /* XmlNewsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XmlNewsCell.swift; sourceTree = "<group>"; };
 		F86EF70E2AE2D5E3009CEAF4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F86EF70F2AE2D5E3009CEAF4 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F86EF73A2AE2D716009CEAF4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F89AC60E2AD8547300A1BB0E /* NaverMediaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverMediaCollectionViewCell.swift; sourceTree = "<group>"; };
 		F8AA1E5B2ADB060900FD2306 /* ScheduleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCoordinator.swift; sourceTree = "<group>"; };
 		F8B3DFAD2AB6D469006F0468 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -261,6 +265,14 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		F35CECEF2AE7567E00B8C2A5 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				F35CECF02AE756AF00B8C2A5 /* FirebaseMessagingService.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
 		F80D395B2AAC7B1400206DB7 = {
 			isa = PBXGroup;
 			children = (
@@ -286,6 +298,8 @@
 		F80D39662AAC7B1400206DB7 /* Volleyball */ = {
 			isa = PBXGroup;
 			children = (
+				F35CECF42AE7793400B8C2A5 /* Volleyball.entitlements */,
+				F35CECEF2AE7567E00B8C2A5 /* Firebase */,
 				F8B838712ADC48010006C801 /* Constant */,
 				F86E40BC2ABEC3DC00827612 /* Views */,
 				F8B3DFB92AB6F9CE006F0468 /* Data */,
@@ -298,8 +312,8 @@
 				F80D39692AAC7B1400206DB7 /* SceneDelegate.swift */,
 				F80D39702AAC7B1600206DB7 /* Assets.xcassets */,
 				F80D39722AAC7B1600206DB7 /* LaunchScreen.storyboard */,
+				F35CECF22AE7771800B8C2A5 /* GoogleService-Info.plist */,
 				F80D39752AAC7B1600206DB7 /* Info.plist */,
-				F86EF73A2AE2D716009CEAF4 /* GoogleService-Info.plist */,
 				F86EF6DC2AE2D5E3009CEAF4 /* Volleyball */,
 			);
 			path = Volleyball;
@@ -650,6 +664,7 @@
 			files = (
 				F80D39742AAC7B1600206DB7 /* LaunchScreen.storyboard in Resources */,
 				F86EF7212AE2D5E3009CEAF4 /* Assets.xcassets in Resources */,
+				F35CECF32AE7771800B8C2A5 /* GoogleService-Info.plist in Resources */,
 				F86EF7242AE2D5E3009CEAF4 /* LaunchScreen.storyboard in Resources */,
 				F80D39712AAC7B1600206DB7 /* Assets.xcassets in Resources */,
 			);
@@ -849,6 +864,7 @@
 				F86EF7372AE2D5E3009CEAF4 /* XmlNewsCell.swift in Sources */,
 				F86EF72F2AE2D5E3009CEAF4 /* SteadyViewController.swift in Sources */,
 				F86EF72C2AE2D5E3009CEAF4 /* TeamRankViewController.swift in Sources */,
+				F35CECF12AE756AF00B8C2A5 /* FirebaseMessagingService.swift in Sources */,
 				F86EF7272AE2D5E3009CEAF4 /* IntroViewController.swift in Sources */,
 				F8B838732ADC48120006C801 /* Constant.swift in Sources */,
 				F86EF72E2AE2D5E3009CEAF4 /* NewsViewController.swift in Sources */,
@@ -1032,8 +1048,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Volleyball/Volleyball.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 2KUAP497LD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Volleyball/Info.plist;
@@ -1046,7 +1063,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.techtown.volleyball;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1061,8 +1078,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Volleyball/Volleyball.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 2KUAP497LD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Volleyball/Info.plist;
@@ -1075,7 +1093,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.techtown.volleyball;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

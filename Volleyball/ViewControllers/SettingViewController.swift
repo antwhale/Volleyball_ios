@@ -48,10 +48,9 @@ class SettingViewController : UIViewController {
     
     let cheeringTeamPicker : UIPickerView = {
         let picker = UIPickerView()
-        
+        picker.setValue(UIColor.systemGray, forKeyPath: "textColor")
         return picker
     }()
-    
     
     let teamList = ["GS칼텍스", "기업은행", "도로공사", "정관장", "페퍼저축은행", "현대거설", "흥국생명", "KB손해보험", "OK금융그룹", "대한항공", "삼성화재", "우리카드", "한국전력", "현대캐피탈", "기본"]
     let disposeBag = DisposeBag()
@@ -117,8 +116,6 @@ class SettingViewController : UIViewController {
         cheeringTeamPicker.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         cheeringTeamPicker.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         cheeringTeamPicker.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        
-        
     }
     
     @objc
@@ -126,7 +123,6 @@ class SettingViewController : UIViewController {
         Log.debug(SettingViewController.tag, "showCheeringTeam")
         
         self.cheeringTeamPicker.isHidden = false
-        
     }
     
     private func initSubscribe() {
