@@ -497,7 +497,7 @@ class HomeViewController: UIViewController {
         
         let nowDate = Date()
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM월 dd일 (E)"
+        dateFormatter.dateFormat = "M월 d일 (E)"
         let dateString = dateFormatter.string(from: nowDate)
         
         Log.debug(HomeViewController.tag, "dateString: \(dateString)")

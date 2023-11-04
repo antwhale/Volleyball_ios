@@ -9,13 +9,15 @@ import Foundation
 import UIKit
 import WebKit
 
-class PlayerRankViewController: UIViewController {
+class PlayerRankViewController: UIViewController, WKUIDelegate {
     static let tag = "PlayerRankViewController"
     
-    private var webView: WKWebView!
+    var myWebView: WKWebView!
     var clickSettingIcon : (() -> Void)?
+    
+    let defaultUrl = "https://kovo.co.kr/KOVO/stats/player-record"
 
-    override func viewDidLoad(){
+    override func viewDidLoad() {
         super.viewDidLoad()
         
         initViews()
@@ -34,8 +36,6 @@ class PlayerRankViewController: UIViewController {
         self.navigationController?.navigationBar.standardAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gearshape"), style: .plain, target: self, action: #selector(clickSetting))
-        
-        
     }
     
     @objc
@@ -46,7 +46,7 @@ class PlayerRankViewController: UIViewController {
     
     private func initWebView() {
         let preferences = WKPreferences()
-        preferences.javaScriptEnabled = true
+        
         preferences.javaScriptCanOpenWindowsAutomatically = true
         
         let contentController = WKUserContentController()
@@ -56,22 +56,55 @@ class PlayerRankViewController: UIViewController {
         configuration.preferences = preferences
         configuration.userContentController = contentController
         
-        webView = WKWebView(frame: self.view.bounds, configuration: configuration)
+        myWebView = WKWebView(frame: self.view.bounds, configuration: configuration)
+        myWebView.configuration.defaultWebpagePreferences.allowsContentJavaScript = true
+        myWebView.addObserver(self, forKeyPath: "URL", context: nil)
         
-        view.addSubview(webView)
-        webView.translatesAutoresizingMaskIntoConstraints = false
-        webView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        webView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        webView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        webView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        view.addSubview(myWebView)
+        myWebView.translatesAutoresizingMaskIntoConstraints = false
+        myWebView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        myWebView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        myWebView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        myWebView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
 
-        let playerRankUrl = URL(string: "https://kovo.co.kr/KOVO/stats/player-record")
-        let playerRankRequest = URLRequest(url: playerRankUrl!)
-        webView.load(playerRankRequest)
+        loadDefaultUrl()
     }
+    
+    private func loadDefaultUrl() {
+        Log.debug(PlayerRankViewController.tag, "loadDefaultUrl")
+        
+        let playerRankUrl = URL(string: defaultUrl)
+        let playerRankRequest = URLRequest(url: playerRankUrl!)
+        myWebView.load(playerRankRequest)
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        Log.debug(PlayerRankViewController.tag, "observe URL Value")
+        
+        if keyPath == #keyPath(WKWebView.url) {
+            //Whenever URL changes, it can be accessed via WKWebView instance
+            let urlStr = myWebView.url?.absoluteString ?? ""
+            
+            if !urlStr.contains("https://kovo.co.kr/KOVO/stats/") {
+                makeAlertDialog()
+            }
+        }
+    }
+    
+    private func makeAlertDialog() {
+        Log.debug(PlayerRankViewController.tag, "makeAlertDialog")
+        
+        let alertController = UIAlertController(title: "알림", message: "기록 외의 페이지에는 접근할 수 없습니다", preferredStyle: .alert)
+        let alertSuccessBtn = UIAlertAction(title: "확인", style: .default) { [weak self] (action) in
+            self?.loadDefaultUrl()
+        }
+        
+        alertController.addAction(alertSuccessBtn)
+        
+        self.present(alertController, animated: false, completion: nil)
+    }
+    
 }
-
-
 
 extension PlayerRankViewController : WKScriptMessageHandler {
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {

@@ -14,7 +14,8 @@ class TeamRankViewController: UIViewController {
     static let tag = "TeamRankViewController"
     var clickSettingIcon : (() -> Void)?
 
-    private var webView: WKWebView!
+    private var myWebView: WKWebView!
+    let defaultUrl = "https://kovo.co.kr/KOVO/stats/team-record"
     
     override func viewDidLoad(){
         super.viewDidLoad()
@@ -39,7 +40,6 @@ class TeamRankViewController: UIViewController {
     
     private func initWebView() {
         let preferences = WKPreferences()
-        preferences.javaScriptEnabled = true
         preferences.javaScriptCanOpenWindowsAutomatically = true
         
         let contentController = WKUserContentController()
@@ -49,24 +49,58 @@ class TeamRankViewController: UIViewController {
         configuration.preferences = preferences
         configuration.userContentController = contentController
         
-        webView = WKWebView(frame: self.view.bounds, configuration: configuration)
+        myWebView = WKWebView(frame: self.view.bounds, configuration: configuration)
+        myWebView.configuration.defaultWebpagePreferences.allowsContentJavaScript = true
+        myWebView.addObserver(self, forKeyPath: "URL", context: nil)
         
-        view.addSubview(webView)
-        webView.translatesAutoresizingMaskIntoConstraints = false
-        webView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        webView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        webView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        webView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        view.addSubview(myWebView)
+        myWebView.translatesAutoresizingMaskIntoConstraints = false
+        myWebView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        myWebView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        myWebView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        myWebView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
-        let teamRankUrl = URL(string: "https://kovo.co.kr/KOVO/stats/team-record")
-        let teamRankRequest = URLRequest(url: teamRankUrl!)
-        webView.load(teamRankRequest)
+        loadDefaultUrl()
     }
     
     @objc
     private func clickSetting() {
         Log.debug(TeamRankViewController.tag, "clickSetting")
         self.clickSettingIcon?()
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        Log.debug(TeamRankViewController.tag, "observe URL Value")
+        
+        if keyPath == #keyPath(WKWebView.url) {
+            //Whenever URL changes, it can be accessed via WKWebView instance
+            let urlStr = myWebView.url?.absoluteString ?? ""
+            
+            if !urlStr.contains("https://kovo.co.kr/KOVO/stats/") {
+                makeAlertDialog()
+            }
+        }
+    }
+    
+    private func makeAlertDialog() {
+        Log.debug(TeamRankViewController.tag, "makeAlertDialog")
+        
+        let alertController = UIAlertController(title: "알림", message: "기록 외의 페이지에는 접근할 수 없습니다", preferredStyle: .alert)
+        let alertSuccessBtn = UIAlertAction(title: "확인", style: .default) { [weak self] (action) in
+            self?.loadDefaultUrl()
+        }
+        
+        alertController.addAction(alertSuccessBtn)
+        
+        self.present(alertController, animated: false, completion: nil)
+    }
+    
+    private func loadDefaultUrl() {
+        Log.debug(TeamRankViewController.tag, "loadDefaultUrl")
+        
+        let teamRankUrl = URL(string: defaultUrl)
+        let teamRankRequest = URLRequest(url: teamRankUrl!)
+        myWebView.load(teamRankRequest)
     }
 }
 
