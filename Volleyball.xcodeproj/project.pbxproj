@@ -28,6 +28,8 @@
 		F80D399D2AAC82AD00206DB7 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80D399C2AAC82AD00206DB7 /* AppCoordinator.swift */; };
 		F80D39A12AACAAE800206DB7 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80D39A02AACAAE800206DB7 /* LoginCoordinator.swift */; };
 		F80D39A42AACD97F00206DB7 /* TabBarPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80D39A32AACD97F00206DB7 /* TabBarPage.swift */; };
+		F827F5EB2B0A32FB00BF935B /* TeamRankViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F827F5EA2B0A32FB00BF935B /* TeamRankViewModel.swift */; };
+		F827F5ED2B0A35A800BF935B /* TeamRankInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F827F5EC2B0A35A800BF935B /* TeamRankInfo.swift */; };
 		F8383C1C2AB5B45A002A849C /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8383C1B2AB5B45A002A849C /* IntroViewController.swift */; };
 		F8383C1F2AB5B5A6002A849C /* OSLog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8383C1E2AB5B5A6002A849C /* OSLog.framework */; };
 		F8383C222AB5B5DE002A849C /* OSLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8383C212AB5B5DE002A849C /* OSLog.swift */; };
@@ -150,6 +152,8 @@
 		F80D399C2AAC82AD00206DB7 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		F80D39A02AACAAE800206DB7 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		F80D39A32AACD97F00206DB7 /* TabBarPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPage.swift; sourceTree = "<group>"; };
+		F827F5EA2B0A32FB00BF935B /* TeamRankViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamRankViewModel.swift; sourceTree = "<group>"; };
+		F827F5EC2B0A35A800BF935B /* TeamRankInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamRankInfo.swift; sourceTree = "<group>"; };
 		F8383C1B2AB5B45A002A849C /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		F8383C1E2AB5B5A6002A849C /* OSLog.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OSLog.framework; path = System/Library/Frameworks/OSLog.framework; sourceTree = SDKROOT; };
 		F8383C212AB5B5DE002A849C /* OSLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSLog.swift; sourceTree = "<group>"; };
@@ -361,6 +365,7 @@
 				F8B3DFAF2AB6D498006F0468 /* HomeViewModel.swift */,
 				F8B3DFBC2AB6FDE8006F0468 /* NewsViewModel.swift */,
 				F8B8386F2ADC03AD0006C801 /* SettingViewModel.swift */,
+				F827F5EA2B0A32FB00BF935B /* TeamRankViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -541,6 +546,7 @@
 			children = (
 				F8B3DFBA2AB6FA10006F0468 /* XmlNewsData.swift */,
 				F8B4B3652ACB310600314E67 /* TeamInfo.swift */,
+				F827F5EC2B0A35A800BF935B /* TeamRankInfo.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -811,6 +817,7 @@
 				F8B3DFB82AB6D575006F0468 /* PlayerRankViewController.swift in Sources */,
 				F86EF7202AE2D5E3009CEAF4 /* TabBarPage.swift in Sources */,
 				F86EF7102AE2D5E3009CEAF4 /* PlayerRankCoordinator.swift in Sources */,
+				F827F5EB2B0A32FB00BF935B /* TeamRankViewModel.swift in Sources */,
 				F8009C792AB35A3C00B712C4 /* ReadyViewController.swift in Sources */,
 				F86EF7172AE2D5E3009CEAF4 /* NewsCoordinator.swift in Sources */,
 				F86EF71F2AE2D5E3009CEAF4 /* MainTabBarPage.swift in Sources */,
@@ -872,6 +879,7 @@
 				F86EF7332AE2D5E3009CEAF4 /* TeamInfo.swift in Sources */,
 				F86EF7222AE2D5E3009CEAF4 /* UIImageView+Extension.swift in Sources */,
 				F8383C2A2AB5D956002A849C /* MainTabBarPage.swift in Sources */,
+				F827F5ED2B0A35A800BF935B /* TeamRankInfo.swift in Sources */,
 				F8383C242AB5CBC2002A849C /* IntroCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

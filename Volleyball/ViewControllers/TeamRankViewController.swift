@@ -8,6 +8,9 @@
 import Foundation
 import UIKit
 import WebKit
+import RxSwift
+import RxCocoa
+import RxRelay
 
 
 class TeamRankViewController: UIViewController {
@@ -15,13 +18,28 @@ class TeamRankViewController: UIViewController {
     var clickSettingIcon : (() -> Void)?
 
     private var myWebView: WKWebView!
+    private let teamRankViewModel = TeamRankViewModel()
+    
     let defaultUrl = "https://kovo.co.kr/KOVO/stats/team-record"
+    let disposeBag = DisposeBag()
     
     override func viewDidLoad(){
         super.viewDidLoad()
         
         initViews()
         initWebView()
+        
+        teamRankViewModel.manTeamRankSubject
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { html in
+                Log.debug(TeamRankViewController.tag, "html: \(html)")
+                self.myWebView.loadHTMLString(html, baseURL: nil)
+            }, onError: { error in
+                Log.error(TeamRankViewController.tag, error.localizedDescription)
+            }).disposed(by: disposeBag)
+        
+        teamRankViewModel.getMansRank()
+
     }
     
     private func initViews() {
@@ -51,7 +69,7 @@ class TeamRankViewController: UIViewController {
         
         myWebView = WKWebView(frame: self.view.bounds, configuration: configuration)
         myWebView.configuration.defaultWebpagePreferences.allowsContentJavaScript = true
-        myWebView.addObserver(self, forKeyPath: "URL", context: nil)
+//        myWebView.addObserver(self, forKeyPath: "URL", context: nil)
         
         view.addSubview(myWebView)
         myWebView.translatesAutoresizingMaskIntoConstraints = false
@@ -60,7 +78,7 @@ class TeamRankViewController: UIViewController {
         myWebView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         myWebView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
-        loadDefaultUrl()
+//        loadDefaultUrl()
     }
     
     @objc
