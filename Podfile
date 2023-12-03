@@ -14,6 +14,7 @@ target 'Volleyball' do
   pod 'FirebaseDatabase'
   pod 'FirebaseAnalytics' 
   pod 'SwiftSoup', '2.0.0'
+  pod 'FirebaseRemoteConfig'
 
   target 'VolleyballTests' do
     inherit! :search_paths

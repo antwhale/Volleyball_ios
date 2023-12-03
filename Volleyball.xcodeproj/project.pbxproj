@@ -97,7 +97,11 @@
 		F8B665632ADAD5D800AAC526 /* SettingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B665622ADAD5D800AAC526 /* SettingCoordinator.swift */; };
 		F8B838702ADC03AD0006C801 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B8386F2ADC03AD0006C801 /* SettingViewModel.swift */; };
 		F8B838732ADC48120006C801 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B838722ADC48120006C801 /* Constant.swift */; };
+		F8BA68802B1CF0DD008E6808 /* IntroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BA687F2B1CF0DD008E6808 /* IntroViewModel.swift */; };
 		F8BEA65F2AD2A88E00F4174B /* InstaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BEA65E2AD2A88E00F4174B /* InstaCollectionViewCell.swift */; };
+		F8E09B9F2B1CB71C00943E4D /* TeamTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E09B9E2B1CB71B00943E4D /* TeamTableHeaderView.swift */; };
+		F8E09BA12B1CC2B500943E4D /* TeamTableRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E09BA02B1CC2B500943E4D /* TeamTableRowView.swift */; };
+		F8E09BA32B1CC69700943E4D /* TeamTableContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E09BA22B1CC69700943E4D /* TeamTableContentView.swift */; };
 		F8E4C73E2ABEED1400579CB6 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E4C73D2ABEED1400579CB6 /* UIImageView+Extension.swift */; };
 		F8E4C7402ABF120800579CB6 /* NewsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E4C73F2ABF120800579CB6 /* NewsCoordinator.swift */; };
 /* End PBXBuildFile section */
@@ -222,7 +226,11 @@
 		F8B665622ADAD5D800AAC526 /* SettingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCoordinator.swift; sourceTree = "<group>"; };
 		F8B8386F2ADC03AD0006C801 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		F8B838722ADC48120006C801 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		F8BA687F2B1CF0DD008E6808 /* IntroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewModel.swift; sourceTree = "<group>"; };
 		F8BEA65E2AD2A88E00F4174B /* InstaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaCollectionViewCell.swift; sourceTree = "<group>"; };
+		F8E09B9E2B1CB71B00943E4D /* TeamTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTableHeaderView.swift; sourceTree = "<group>"; };
+		F8E09BA02B1CC2B500943E4D /* TeamTableRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTableRowView.swift; sourceTree = "<group>"; };
+		F8E09BA22B1CC69700943E4D /* TeamTableContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTableContentView.swift; sourceTree = "<group>"; };
 		F8E4C73D2ABEED1400579CB6 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		F8E4C73F2ABF120800579CB6 /* NewsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -366,6 +374,7 @@
 				F8B3DFBC2AB6FDE8006F0468 /* NewsViewModel.swift */,
 				F8B8386F2ADC03AD0006C801 /* SettingViewModel.swift */,
 				F827F5EA2B0A32FB00BF935B /* TeamRankViewModel.swift */,
+				F8BA687F2B1CF0DD008E6808 /* IntroViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -424,6 +433,9 @@
 				F86E40BD2ABEC44C00827612 /* XmlNewsCell.swift */,
 				F8BEA65E2AD2A88E00F4174B /* InstaCollectionViewCell.swift */,
 				F89AC60E2AD8547300A1BB0E /* NaverMediaCollectionViewCell.swift */,
+				F8E09B9E2B1CB71B00943E4D /* TeamTableHeaderView.swift */,
+				F8E09BA02B1CC2B500943E4D /* TeamTableRowView.swift */,
+				F8E09BA22B1CC69700943E4D /* TeamTableContentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -812,6 +824,7 @@
 				F8B665612ADABC0D00AAC526 /* SettingViewController.swift in Sources */,
 				F86EF7152AE2D5E3009CEAF4 /* SettingCoordinator.swift in Sources */,
 				F8009C772AB34A8300B712C4 /* TabCoordinator.swift in Sources */,
+				F8BA68802B1CF0DD008E6808 /* IntroViewModel.swift in Sources */,
 				F8B3DFAE2AB6D469006F0468 /* HomeViewController.swift in Sources */,
 				F80D396C2AAC7B1400206DB7 /* LoginViewController.swift in Sources */,
 				F8B3DFB82AB6D575006F0468 /* PlayerRankViewController.swift in Sources */,
@@ -826,6 +839,7 @@
 				F86EF7142AE2D5E3009CEAF4 /* TeamRankCoordinator.swift in Sources */,
 				F86EF7292AE2D5E3009CEAF4 /* PlayerRankViewController.swift in Sources */,
 				F86EF7112AE2D5E3009CEAF4 /* AppCoordinator.swift in Sources */,
+				F8E09BA32B1CC69700943E4D /* TeamTableContentView.swift in Sources */,
 				F8B3DFBB2AB6FA10006F0468 /* XmlNewsData.swift in Sources */,
 				F8E4C73E2ABEED1400579CB6 /* UIImageView+Extension.swift in Sources */,
 				F86EF7342AE2D5E3009CEAF4 /* XmlNewsData.swift in Sources */,
@@ -835,6 +849,7 @@
 				F86EF7302AE2D5E3009CEAF4 /* LoginViewController.swift in Sources */,
 				F8009C7D2AB35A9C00B712C4 /* GoViewController.swift in Sources */,
 				F86EF71D2AE2D5E3009CEAF4 /* NewsViewModel.swift in Sources */,
+				F8E09B9F2B1CB71C00943E4D /* TeamTableHeaderView.swift in Sources */,
 				F86EF7182AE2D5E3009CEAF4 /* MainCoordinator.swift in Sources */,
 				F8383C282AB5D8EA002A849C /* MainCoordinator.swift in Sources */,
 				F86EF72D2AE2D5E3009CEAF4 /* HomeViewController.swift in Sources */,
@@ -864,6 +879,7 @@
 				F86EF7192AE2D5E3009CEAF4 /* IntroCoordinator.swift in Sources */,
 				F86EF7162AE2D5E3009CEAF4 /* HomeCoordinator.swift in Sources */,
 				F86EF71B2AE2D5E3009CEAF4 /* Coordinator.swift in Sources */,
+				F8E09BA12B1CC2B500943E4D /* TeamTableRowView.swift in Sources */,
 				F8695AF92AC9BDA800DAEC13 /* HomeCoordinator.swift in Sources */,
 				F86EF72A2AE2D5E3009CEAF4 /* MainViewController.swift in Sources */,
 				F8B4B3662ACB310600314E67 /* TeamInfo.swift in Sources */,

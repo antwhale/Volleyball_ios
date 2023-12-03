@@ -16,30 +16,93 @@ import RxRelay
 class TeamRankViewController: UIViewController {
     static let tag = "TeamRankViewController"
     var clickSettingIcon : (() -> Void)?
-
-    private var myWebView: WKWebView!
+    
+    let scrollView : UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.showsVerticalScrollIndicator = false
+//        scrollView.backgroundColor = .systemRed
+        return scrollView
+    }()
+    
+    let scrollContentView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .systemCyan
+        return view
+    }()
+    
+    let manTableTitle : UILabel = {
+        let label = UILabel()
+        label.text = "남자부 팀 순위"
+        label.font = .boldSystemFont(ofSize: 14)
+        
+        return label
+    }()
+    
+    let manTeamTableHeaderView : TeamTableHeaderView = {
+        let view = TeamTableHeaderView()
+        
+        return view
+    }()
+    
+    let manTeamTableContentView : TeamTableContentView = {
+        let view = TeamTableContentView()
+    
+        return view
+    }()
+    
+    let womanTableTitle : UILabel = {
+        let label = UILabel()
+        label.text = "여자부 팀 순위"
+        label.font = .boldSystemFont(ofSize: 14)
+        
+        return label
+    }()
+    
+    let womanTeamTableHeaderView : TeamTableHeaderView = {
+        let view = TeamTableHeaderView()
+        
+        return view
+    }()
+    
+    let womanTeamTableContentView : TeamTableContentView = {
+        let view = TeamTableContentView()
+    
+        return view
+    }()
+    
+    
     private let teamRankViewModel = TeamRankViewModel()
     
     let defaultUrl = "https://kovo.co.kr/KOVO/stats/team-record"
     let disposeBag = DisposeBag()
     
-    override func viewDidLoad(){
+    override func viewDidLoad() {
         super.viewDidLoad()
         
         initViews()
-        initWebView()
+        setupLayout()
         
         teamRankViewModel.manTeamRankSubject
             .observe(on: MainScheduler.instance)
-            .subscribe(onNext: { html in
-                Log.debug(TeamRankViewController.tag, "html: \(html)")
-                self.myWebView.loadHTMLString(html, baseURL: nil)
+            .subscribe(onNext: { [weak self] data in
+                self?.manTeamTableContentView.setContent(contents: data)
+
+            }, onError: { error in
+                Log.error(TeamRankViewController.tag, error.localizedDescription)
+            }).disposed(by: disposeBag)
+        
+        teamRankViewModel.womanTeamRankSubject
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { [weak self] data in
+                self?.womanTeamTableContentView.setContent(contents: data)
             }, onError: { error in
                 Log.error(TeamRankViewController.tag, error.localizedDescription)
             }).disposed(by: disposeBag)
         
         teamRankViewModel.getMansRank()
-
+        
+        teamRankViewModel.getWomansRank()
+        
     }
     
     private func initViews() {
@@ -54,31 +117,62 @@ class TeamRankViewController: UIViewController {
         self.navigationController?.navigationBar.standardAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "gearshape"), style: .plain, target: self, action: #selector(clickSetting))
+        
+        view.backgroundColor = .white
     }
     
-    private func initWebView() {
-        let preferences = WKPreferences()
-        preferences.javaScriptCanOpenWindowsAutomatically = true
+    private func setupLayout() {
+        Log.debug(TeamRankViewController.tag, "setUpLayout")
         
-        let contentController = WKUserContentController()
-        contentController.add(self, name: "bridge")
+        view.addSubview(scrollView)
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         
-        let configuration = WKWebViewConfiguration()
-        configuration.preferences = preferences
-        configuration.userContentController = contentController
+        scrollView.addSubview(scrollContentView)
+        scrollContentView.translatesAutoresizingMaskIntoConstraints = false
+        scrollContentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
+        scrollContentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
+        scrollContentView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
+        scrollContentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
+        scrollContentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor, multiplier: 1.0).isActive = true
         
-        myWebView = WKWebView(frame: self.view.bounds, configuration: configuration)
-        myWebView.configuration.defaultWebpagePreferences.allowsContentJavaScript = true
-//        myWebView.addObserver(self, forKeyPath: "URL", context: nil)
+        scrollContentView.addSubview(manTableTitle)
+        manTableTitle.translatesAutoresizingMaskIntoConstraints = false
+        manTableTitle.leadingAnchor.constraint(equalTo: scrollContentView.leadingAnchor, constant: 8).isActive = true
+        manTableTitle.topAnchor.constraint(equalTo: scrollContentView.topAnchor, constant: 16).isActive = true
         
-        view.addSubview(myWebView)
-        myWebView.translatesAutoresizingMaskIntoConstraints = false
-        myWebView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        myWebView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        myWebView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        myWebView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        scrollContentView.addSubview(manTeamTableHeaderView)
+        manTeamTableHeaderView.translatesAutoresizingMaskIntoConstraints = false
+        manTeamTableHeaderView.leadingAnchor.constraint(equalTo: scrollContentView.leadingAnchor).isActive = true
+        manTeamTableHeaderView.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor).isActive = true
+        manTeamTableHeaderView.topAnchor.constraint(equalTo: manTableTitle.bottomAnchor, constant: 8).isActive = true
         
-//        loadDefaultUrl()
+        scrollContentView.addSubview(manTeamTableContentView)
+        manTeamTableContentView.translatesAutoresizingMaskIntoConstraints = false
+        manTeamTableContentView.leadingAnchor.constraint(equalTo: scrollContentView.leadingAnchor).isActive = true
+        manTeamTableContentView.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor).isActive = true
+        manTeamTableContentView.topAnchor.constraint(equalTo: manTeamTableHeaderView.bottomAnchor, constant: 5).isActive = true
+
+        scrollContentView.addSubview(womanTableTitle)
+        womanTableTitle.translatesAutoresizingMaskIntoConstraints = false
+        womanTableTitle.leadingAnchor.constraint(equalTo: scrollContentView.leadingAnchor, constant: 8).isActive = true
+        womanTableTitle.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor).isActive = true
+        womanTableTitle.topAnchor.constraint(equalTo: manTeamTableContentView.bottomAnchor, constant: 16).isActive = true
+        
+        scrollContentView.addSubview(womanTeamTableHeaderView)
+        womanTeamTableHeaderView.translatesAutoresizingMaskIntoConstraints = false
+        womanTeamTableHeaderView.leadingAnchor.constraint(equalTo: scrollContentView.leadingAnchor).isActive = true
+        womanTeamTableHeaderView.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor).isActive = true
+        womanTeamTableHeaderView.topAnchor.constraint(equalTo: womanTableTitle.bottomAnchor, constant: 8).isActive = true
+        
+        scrollContentView.addSubview(womanTeamTableContentView)
+        womanTeamTableContentView.translatesAutoresizingMaskIntoConstraints = false
+        womanTeamTableContentView.leadingAnchor.constraint(equalTo: scrollContentView.leadingAnchor).isActive = true
+        womanTeamTableContentView.trailingAnchor.constraint(equalTo: scrollContentView.trailingAnchor).isActive = true
+        womanTeamTableContentView.topAnchor.constraint(equalTo: womanTeamTableHeaderView.bottomAnchor, constant: 5).isActive = true
     }
     
     @objc
@@ -87,43 +181,6 @@ class TeamRankViewController: UIViewController {
         self.clickSettingIcon?()
     }
     
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        Log.debug(TeamRankViewController.tag, "observe URL Value")
-        
-        if keyPath == #keyPath(WKWebView.url) {
-            //Whenever URL changes, it can be accessed via WKWebView instance
-            let urlStr = myWebView.url?.absoluteString ?? ""
-            
-            if !urlStr.contains("https://kovo.co.kr/KOVO/stats/") {
-                makeAlertDialog()
-            }
-        }
-    }
-    
-    private func makeAlertDialog() {
-        Log.debug(TeamRankViewController.tag, "makeAlertDialog")
-        
-        let alertController = UIAlertController(title: "알림", message: "기록 외의 페이지에는 접근할 수 없습니다", preferredStyle: .alert)
-        let alertSuccessBtn = UIAlertAction(title: "확인", style: .default) { [weak self] (action) in
-            self?.loadDefaultUrl()
-        }
-        
-        alertController.addAction(alertSuccessBtn)
-        
-        self.present(alertController, animated: false, completion: nil)
-    }
-    
-    private func loadDefaultUrl() {
-        Log.debug(TeamRankViewController.tag, "loadDefaultUrl")
-        
-        let teamRankUrl = URL(string: defaultUrl)
-        let teamRankRequest = URLRequest(url: teamRankUrl!)
-        myWebView.load(teamRankRequest)
-    }
-}
 
-extension TeamRankViewController : WKScriptMessageHandler {
-    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        Log.debug("message : \(message.name)")
-    }
+    
 }
